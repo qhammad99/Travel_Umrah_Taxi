@@ -35,9 +35,19 @@ const AdminRoutesListScreen = ({ navigation }) => {
           text: 'Delete',
           onPress: async () => {
             try {
-              await fetch(`http://1.2.3.54:3000/routes/${id}`, { method: 'DELETE' }); // Replace with your backend address
-              Alert.alert('Success', 'Route deleted successfully');
-              fetchRoutes(); // Refresh the list after deletion
+              const response = await fetch(`${API.delete_routes_route}/${id}`, { 
+                method: 'DELETE',
+                headers: {
+                  'Content-Type': 'application/json',
+                  'Authorization': `Bearer testuser:testpassword`,
+                },
+              });
+              const result = await response.json();
+              if(result.message != "Forbidden"){
+                console.log("result: ", result)
+                Alert.alert('Success', 'Route deleted successfully');
+                fetchRoutes()
+              }
             } catch (error) {
               console.error('Error deleting route:', error);
               Alert.alert('Error', 'Failed to delete route');

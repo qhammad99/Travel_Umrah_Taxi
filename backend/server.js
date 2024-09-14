@@ -121,7 +121,7 @@ app.delete('/routes/:id', authenticate, (req, res) => {
 
   routes.splice(routeIndex, 1);
   writeData(routes);
-  res.status(204).end();
+  res.status(200).json({message: "Deleted!"});
 });
 
 // Start the server
