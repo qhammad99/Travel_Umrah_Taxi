@@ -12,6 +12,7 @@
         android:text="@string/slogan_part_1"
         android:paddingStart="16dp"
         android:paddingEnd="10dp"
+        android:textColor="#fff"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/suse"
         android:textAlignment="textStart"
@@ -24,6 +25,7 @@
         android:text="@string/slogan_part_2"
         android:paddingStart="16dp"
         android:paddingEnd="10dp"
+        android:textColor="#fff"
         android:fontFamily="@font/suse"
         android:textAlignment="textStart"
         android:textSize="36sp" />

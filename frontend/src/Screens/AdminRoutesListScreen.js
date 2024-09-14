@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Button, Alert, ActivityIndicator } from 'react-native';
+import API from '../api';
 
 const AdminRoutesListScreen = ({ navigation }) => {
   const [routes, setRoutes] = useState([]);
@@ -13,7 +14,7 @@ const AdminRoutesListScreen = ({ navigation }) => {
   const fetchRoutes = async () => {
     setLoading(true);
     try {
-      const response = await fetch('http://1.2.3.54:3000/routes'); // Replace with your backend address
+      const response = await fetch(API.get_routes_route);
       const result = await response.json();
       setRoutes(result);
     } catch (error) {
@@ -70,6 +71,7 @@ const AdminRoutesListScreen = ({ navigation }) => {
 
   return (
     <View style={styles.container}>
+     {loading && <ActivityIndicator size="large" color="#007BFF" />}
       <FlatList
         data={routes}
         renderItem={renderRouteItem}
@@ -84,7 +86,6 @@ const AdminRoutesListScreen = ({ navigation }) => {
       >
         <Text style={styles.addButtonText}>Add Route</Text>
       </TouchableOpacity>
-      {loading && <ActivityIndicator size="large" color="#007BFF" />}
     </View>
   );
 };
@@ -104,12 +105,14 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 1 },
     shadowOpacity: 0.2,
     shadowRadius: 1.5,
-    elevation: 2,
+    elevation: 5,
   },
   itemTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 8,
+    color: '#151515',
+    fontFamily: 'Outfit-Medium'
   },
   buttonContainer: {
     flexDirection: 'row',

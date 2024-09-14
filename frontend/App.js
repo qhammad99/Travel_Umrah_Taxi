@@ -50,9 +50,9 @@ const App = () => {
             <Drawer.Screen name="CarDetail" component={DetailPage} options={{drawerItemStyle: { display: 'none' }}} />
             <Drawer.Screen name="Terms" component={TermsAndConditions} />
             <Drawer.Screen name="Login" component={LoginScreen} />
-            <Drawer.Screen name="AdminRoutesList" component={AdminRoutesListScreen} />
-            <Drawer.Screen name="AddRoute" component={AddRouteScreen} />
-            <Drawer.Screen name="EditRoute" component={EditRouteScreen} />
+            <Drawer.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{drawerItemStyle: { display: 'none' }}} />
+            {/* <Drawer.Screen name="AddRoute" component={AddRouteScreen} />
+            <Drawer.Screen name="EditRoute" component={EditRouteScreen} /> */}
           </Drawer.Navigator>
         </NavigationContainer>
       </SafeAreaView>
