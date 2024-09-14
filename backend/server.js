@@ -61,7 +61,8 @@ app.post('/login', (req, res) => {
 // Retrieve all routes
 app.get('/routes', (req, res) => {
   const routes = readData();
-  res.json(routes);
+  const sorted_routes = routes.sort((a, b) => (a.id > b.id ? -1 : 1))
+  res.json(sorted_routes);
 });
 
 // Retrieve a specific route
@@ -77,13 +78,14 @@ app.get('/routes/:id', (req, res) => {
 
 // Create a new route
 app.post('/routes', authenticate, (req, res) => {
-  const { id, name, available_cars } = req.body;
-  if (!id || !name || !available_cars) {
-    return res.status(400).json({ message: 'ID, name, and available_cars are required' });
+  const { name} = req.body;
+  if (!name) {
+    return res.status(400).json({ message: 'Required fields are missing' });
   }
 
+  let id = Math.floor(new Date().getTime()/1000.0);
   const routes = readData();
-  const newRoute = { id, name, available_cars };
+  const newRoute = { id, name, "available_cars": [] };
   routes.push(newRoute);
   writeData(routes);
   res.status(201).json(newRoute);
@@ -113,9 +115,9 @@ app.put('/routes/:id', authenticate, (req, res) => {
 app.delete('/routes/:id', authenticate, (req, res) => {
   const { id } = req.params;
   const routes = readData();
-  const routeIndex = routes.findIndex(r => r.id === id);
+  const routeIndex = routes.findIndex(r => r.id == id);
 
-  if (routeIndex === -1) {
+  if (routeIndex == -1) {
     return res.status(404).json({ message: 'Route not found' });
   }
 

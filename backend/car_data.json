@@ -1,0 +1,26 @@
+[
+    {
+      "car_name": "CAMRY",
+      "image_name": "CAMRY.png",
+      "no_passegers": 4,
+      "no_bags": 3
+    },
+    {
+      "car_name": "STARIA",
+      "image_name": "STARIA.png",
+      "no_passegers": 7,
+      "no_bags": 8
+    },
+    {
+      "car_name": "GMC",
+      "image_name": "GMC.png",
+      "no_passegers": 7,
+      "no_bags": 8
+    },
+    {
+      "car_name": "HIACE",
+      "image_name": "HIACE.png",
+      "no_passegers": 12,
+      "no_bags": 15
+    }
+  ]

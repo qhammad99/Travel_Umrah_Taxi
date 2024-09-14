@@ -1,33 +1,37 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator } from 'react-native';
+import API from '../api';
 
 const AddRouteScreen = ({ navigation }) => {
-  const [name, setName] = useState('');
-  const [availableCars, setAvailableCars] = useState('');
+  const [pickup, setPickup] = useState('');
+  const [destination, setDestination] = useState('');
   const [loading, setLoading] = useState(false);
 
   const handleAddRoute = async () => {
-    if (name.trim() === '' || availableCars.trim() === '') {
-      Alert.alert('Error', 'Route name and available cars are required.');
+    if (pickup.trim() === '' || destination.trim() === '' || pickup.length > 1000 || destination.length > 1000) {
+      Alert.alert('Error', 'Incorrect input');
       return;
     }
 
     setLoading(true);
 
     try {
-      const response = await fetch('http://1.2.3.54:3000/routes', { // Replace with your backend address
+      const response = await fetch(API.add_routes_route, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer testuser:testpassword`,
         },
-        body: JSON.stringify({ name, availableCars: JSON.parse(availableCars) }),
+        body: JSON.stringify({ name: `${pickup} to ${destination}`, availableCars:[]}),
       });
 
       const result = await response.json();
 
       if (response.ok) {
         Alert.alert('Success', 'Route added successfully');
-        navigation.goBack(); // Go back to the previous screen
+        setPickup('');
+        setDestination('');
+        navigation.navigate('AdminRoutesList');
       } else {
         Alert.alert('Error', result.message || 'Failed to add route');
       }
@@ -44,16 +48,17 @@ const AddRouteScreen = ({ navigation }) => {
       <Text style={styles.title}>Add Route</Text>
       <TextInput
         style={styles.input}
-        placeholder="Route Name"
-        value={name}
-        onChangeText={setName}
+        placeholder="Pickup"
+        value={pickup}
+        onChangeText={setPickup}
+        placeholderTextColor='#888'
       />
       <TextInput
         style={styles.input}
-        placeholder="Available Cars (JSON format)"
-        value={availableCars}
-        onChangeText={setAvailableCars}
-        multiline
+        placeholder="Destination"
+        value={destination}
+        onChangeText={setDestination}
+        placeholderTextColor='#888'
       />
       <TouchableOpacity
         style={styles.button}
@@ -82,6 +87,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: '#333'
   },
   input: {
     width: '100%',
@@ -91,12 +97,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#ddd',
+    color: '#151515'
   },
   button: {
     width: '100%',
     padding: 15,
     borderRadius: 5,
-    backgroundColor: '#007BFF',
+    backgroundColor: '#7A82FE',
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -51,8 +51,8 @@ const App = () => {
             <Drawer.Screen name="Terms" component={TermsAndConditions} />
             <Drawer.Screen name="Login" component={LoginScreen} />
             <Drawer.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{drawerItemStyle: { display: 'none' }}} />
-            {/* <Drawer.Screen name="AddRoute" component={AddRouteScreen} />
-            <Drawer.Screen name="EditRoute" component={EditRouteScreen} /> */}
+            <Drawer.Screen name="AddRoute" component={AddRouteScreen} options={{drawerItemStyle: { display: 'none' }}} />
+            <Drawer.Screen name="EditRoute" component={EditRouteScreen} options={{drawerItemStyle: { display: 'none' }}} />
           </Drawer.Navigator>
         </NavigationContainer>
       </SafeAreaView>

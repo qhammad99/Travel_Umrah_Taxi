@@ -7,9 +7,13 @@ const AdminRoutesListScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
 
-  useEffect(() => {
-    fetchRoutes();
-  }, []);
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      fetchRoutes();
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   const fetchRoutes = async () => {
     setLoading(true);
@@ -44,7 +48,7 @@ const AdminRoutesListScreen = ({ navigation }) => {
               });
               const result = await response.json();
               if(result.message != "Forbidden"){
-                console.log("result: ", result)
+                // console.log("result: ", result)
                 Alert.alert('Success', 'Route deleted successfully');
                 fetchRoutes()
               }

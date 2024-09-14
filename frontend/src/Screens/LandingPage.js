@@ -212,7 +212,7 @@ const LandingPage = ({ navigation }) => {
 
         Linking.openURL(url)
             .then((supported) => {
-                console.log(supported)
+                // console.log(supported)
                 if (supported) {
                     return Linking.openURL(url);
                 } else {

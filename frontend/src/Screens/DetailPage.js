@@ -23,7 +23,7 @@ const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window'
 
 const DetailPage = ({ route }) => {
     const { path_detail, selected_car } = route.params;
-    const splitted_path = path_detail.name.split('to');
+    const splitted_path = path_detail.name.split(' to ');
 
     const handleCall = () => {
         const number = "+923038722354"
@@ -42,7 +42,7 @@ const DetailPage = ({ route }) => {
     
         Linking.openURL(url)
           .then((supported) => {
-            console.log(supported)
+            // console.log(supported)
             if (supported) {
               return Linking.openURL(url);
             } else {

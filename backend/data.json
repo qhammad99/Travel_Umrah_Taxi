@@ -1,192 +1,192 @@
 [
-    {
-        "id": "1",
-        "name": "Jeddah Airport to Makkah Hotel",
-        "available_cars": [
-            {
-                "car_name": "CAMRY",
-                "image_name": "CAMRY.png",
-                "no_passegers": 4,
-                "no_bags": 3,
-                "price": 300,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "STARIA",
-                "image_name": "STARIA.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 350,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "GMC",
-                "image_name": "GMC.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 600,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "HIACE",
-                "image_name": "HIACE.png",
-                "no_passegers": 12,
-                "no_bags": 15,
-                "price": 450,
-                "currency_symbol": "SAR"
-            }
-        ]
-    },
-    {
-        "id": "2",
-        "name": "Makkah Hotel to Makkah Ziyarah",
-        "available_cars": [
-            {
-                "car_name": "CAMRY",
-                "image_name": "CAMRY.png",
-                "no_passegers": 4,
-                "no_bags": 3,
-                "price": 250,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "STARIA",
-                "image_name": "STARIA.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 350,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "GMC",
-                "image_name": "GMC.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 500,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "HIACE",
-                "image_name": "HIACE.png",
-                "no_passegers": 12,
-                "no_bags": 15,
-                "price": 400,
-                "currency_symbol": "SAR"
-            }
-        ]
-    },
-    {
-        "id": "3",
-        "name": "Makkah Hotel to Madinah Hotel",
-        "available_cars": [
-            {
-                "car_name": "CAMRY",
-                "image_name": "CAMRY.png",
-                "no_passegers": 4,
-                "no_bags": 3,
-                "price": 500,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "STARIA",
-                "image_name": "STARIA.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 700,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "GMC",
-                "image_name": "GMC.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 1200,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "HIACE",
-                "image_name": "HIACE.png",
-                "no_passegers": 12,
-                "no_bags": 15,
-                "price": 800,
-                "currency_symbol": "SAR"
-            }
-        ]
-    },
-    {
-        "id": "4",
-        "name": "Madinah Hotel to Madinah Ziyarah",
-        "available_cars": [
-            {
-                "car_name": "CAMRY",
-                "image_name": "CAMRY.png",
-                "no_passegers": 4,
-                "no_bags": 3,
-                "price": 250,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "STARIA",
-                "image_name": "STARIA.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 300,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "GMC",
-                "image_name": "GMC.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 450,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "HIACE",
-                "image_name": "HIACE.png",
-                "no_passegers": 12,
-                "no_bags": 15,
-                "price": 400,
-                "currency_symbol": "SAR"
-            }
-        ]
-    },
-    {
-        "id": "5",
-        "name": "Makkah Hotel to Taif & Return",
-        "available_cars": [
-            {
-                "car_name": "CAMRY",
-                "image_name": "CAMRY.png",
-                "no_passegers": 4,
-                "no_bags": 3,
-                "price": 500,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "STARIA",
-                "image_name": "STARIA.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 700,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "GMC",
-                "image_name": "GMC.png",
-                "no_passegers": 7,
-                "no_bags": 8,
-                "price": 1200,
-                "currency_symbol": "SAR"
-            },
-            {
-                "car_name": "HIACE",
-                "image_name": "HIACE.png",
-                "no_passegers": 12,
-                "no_bags": 15,
-                "price": 800,
-                "currency_symbol": "SAR"
-            }
-        ]
-    }
+  {
+    "id": "1",
+    "name": "Jeddah Airport to Makkah Hotel",
+    "available_cars": [
+      {
+        "car_name": "CAMRY",
+        "image_name": "CAMRY.png",
+        "no_passegers": 4,
+        "no_bags": 3,
+        "price": 300,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "STARIA",
+        "image_name": "STARIA.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 350,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "GMC",
+        "image_name": "GMC.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 600,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "HIACE",
+        "image_name": "HIACE.png",
+        "no_passegers": 12,
+        "no_bags": 15,
+        "price": 450,
+        "currency_symbol": "SAR"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "name": "Makkah Hotel to Makkah Ziyarah",
+    "available_cars": [
+      {
+        "car_name": "CAMRY",
+        "image_name": "CAMRY.png",
+        "no_passegers": 4,
+        "no_bags": 3,
+        "price": 250,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "STARIA",
+        "image_name": "STARIA.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 350,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "GMC",
+        "image_name": "GMC.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 500,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "HIACE",
+        "image_name": "HIACE.png",
+        "no_passegers": 12,
+        "no_bags": 15,
+        "price": 400,
+        "currency_symbol": "SAR"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "name": "Makkah Hotel to Madinah Hotel",
+    "available_cars": [
+      {
+        "car_name": "CAMRY",
+        "image_name": "CAMRY.png",
+        "no_passegers": 4,
+        "no_bags": 3,
+        "price": 500,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "STARIA",
+        "image_name": "STARIA.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 700,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "GMC",
+        "image_name": "GMC.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 1200,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "HIACE",
+        "image_name": "HIACE.png",
+        "no_passegers": 12,
+        "no_bags": 15,
+        "price": 800,
+        "currency_symbol": "SAR"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "name": "Madinah Hotel to Madinah Ziyarah",
+    "available_cars": [
+      {
+        "car_name": "CAMRY",
+        "image_name": "CAMRY.png",
+        "no_passegers": 4,
+        "no_bags": 3,
+        "price": 250,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "STARIA",
+        "image_name": "STARIA.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 300,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "GMC",
+        "image_name": "GMC.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 450,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "HIACE",
+        "image_name": "HIACE.png",
+        "no_passegers": 12,
+        "no_bags": 15,
+        "price": 400,
+        "currency_symbol": "SAR"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "name": "Makkah Hotel to Taif & Return",
+    "available_cars": [
+      {
+        "car_name": "CAMRY",
+        "image_name": "CAMRY.png",
+        "no_passegers": 4,
+        "no_bags": 3,
+        "price": 500,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "STARIA",
+        "image_name": "STARIA.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 700,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "GMC",
+        "image_name": "GMC.png",
+        "no_passegers": 7,
+        "no_bags": 8,
+        "price": 1200,
+        "currency_symbol": "SAR"
+      },
+      {
+        "car_name": "HIACE",
+        "image_name": "HIACE.png",
+        "no_passegers": 12,
+        "no_bags": 15,
+        "price": 800,
+        "currency_symbol": "SAR"
+      }
+    ]
+  }
 ]
