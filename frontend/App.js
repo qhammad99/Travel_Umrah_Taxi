@@ -33,24 +33,6 @@ const App = () => {
     SplashScreen.hide();
   }, [])
 
-  const handleWhatsapp = () => {
-      const phone_number = "923038722354"
-      const url = `whatsapp://send?phone=${phone_number}&text=${encodeURIComponent(`Hello,\nI'm looking for Taxi!`)}`;
-  
-      Linking.openURL(url)
-        .then((supported) => {
-          console.log(supported)
-          if (supported) {
-            return Linking.openURL(url);
-          } else {
-            alert('WhatsApp is not installed on this device.');
-          }
-        })
-        .catch((err) => {
-          alert("Can't open, Please install Whatsapp first.");
-        });
-  };
-
   return (
     <>
       <StatusBar backgroundColor={Colors.primary} />
@@ -73,15 +55,6 @@ const App = () => {
             <Drawer.Screen name="EditRoute" component={EditRouteScreen} />
           </Drawer.Navigator>
         </NavigationContainer>
-
-        {/* whatsapp icon */}
-        <TouchableOpacity style={styles.whatsapp_container} onPress={handleWhatsapp}>
-          <LottieView
-            source={require('./assets/photos/Whatsapp.json')}
-            autoPlay
-            loop
-            style={styles.wa_icon} />
-        </TouchableOpacity>
       </SafeAreaView>
 
     </>
@@ -111,19 +84,7 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     // fontStyle: 'italic',
     textAlign: 'center',
-    color: '#414141'
-  },
-  whatsapp_container: {
-    position: 'absolute',
-    bottom: 20,
-    right: 10,
-    zIndex: 1,
-  },
-  wa_icon: {
-    height: 80,
-    width: 80,
-    borderRadius: 20,
-    alignSelf: 'center',
+    color: '#fff'
   },
 });
 

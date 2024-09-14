@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:drawable="@color/primaryContrast"/>
+    <item android:drawable="@color/darkContrast"/>
 
     <item
-        android:width="300dp"
-        android:height="200dp"
+        android:width="400dp"
+        android:height="387dp"
         android:drawable="@mipmap/logo_dark"
-        android:gravity="center_horizontal"
-        android:top="170dp" />
+        android:gravity="center"
+        />
 
 </layer-list>

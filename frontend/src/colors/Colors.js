@@ -12,6 +12,6 @@ export default{
     darkColor: '#262D37',  //25 dark for text
     lightDark: '#7A7A7A', //5 for placholders and separators bar.
     primary: '#7A82FE',
-    selectedColor: '#D03715', //5 brownish color for selected items
+    selectedColor: '#0ACF83', //5 brownish color for selected items
     minorColor: '#2196F3', //5 bluis for minor items
 };

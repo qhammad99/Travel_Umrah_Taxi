@@ -4,7 +4,8 @@ import {
     View,
     Text,
     StyleSheet,
-    ImageBackground
+    ImageBackground,
+    TouchableOpacity
 } from 'react-native';
 import Colors from '../colors/Colors';
 import { Picker } from '@react-native-picker/picker';
@@ -205,6 +206,24 @@ const LandingPage = ({ navigation }) => {
             navigation.navigate('Route', { value, route_data });
     };
 
+    const handleWhatsapp = () => {
+        const phone_number = "923038722354"
+        const url = `whatsapp://send?phone=${phone_number}&text=${encodeURIComponent(`Hello,\nI'm looking for Taxi!`)}`;
+
+        Linking.openURL(url)
+            .then((supported) => {
+                console.log(supported)
+                if (supported) {
+                    return Linking.openURL(url);
+                } else {
+                    alert('WhatsApp is not installed on this device.');
+                }
+            })
+            .catch((err) => {
+                alert("Can't open, Please install Whatsapp first.");
+            });
+    };
+
     return (
         <ImageBackground
             source={require('../../assets/photos/Group5.png')}
@@ -224,15 +243,24 @@ const LandingPage = ({ navigation }) => {
                     selectedValue={route_data[0].id}
                     style={{
                         backgroundColor: Colors.primary,
-                        color: '#414141',
+                        color: '#fff',
                         fontSize: 18
                     }}
                     onValueChange={(itemValue) => handleRouteClick(itemValue)}
-                    dropdownIconColor={'#414141'}
+                    dropdownIconColor={'#fff'}
                 >
                     {route_data.map(item => item.id >= 0 && <Picker.Item label={item.name} value={item.id} key={`item ${item.id}`} style={{ fontFamily: 'Outfit-Medium' }} />)}
                 </Picker>
             </View>
+
+            {/* whatsapp icon */}
+            <TouchableOpacity style={styles.whatsapp_container} onPress={handleWhatsapp}>
+                <LottieView
+                    source={require('../../assets/photos/Whatsapp.json')}
+                    autoPlay
+                    loop
+                    style={styles.wa_icon} />
+            </TouchableOpacity>
         </ImageBackground>
 
     );
@@ -260,7 +288,19 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         overflow: 'hidden',
         backgroundColor: '#000'
-    }
+    },
+    whatsapp_container: {
+        position: 'absolute',
+        bottom: 20,
+        right: 10,
+        zIndex: 1,
+    },
+    wa_icon: {
+        height: 80,
+        width: 80,
+        borderRadius: 20,
+        alignSelf: 'center',
+    },
 });
 
 export default LandingPage;

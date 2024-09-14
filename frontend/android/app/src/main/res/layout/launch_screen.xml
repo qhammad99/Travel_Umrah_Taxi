@@ -3,16 +3,31 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/primaryContrast"
-    android:gravity="center_horizontal">
+    android:background="@mipmap/background">
 
-    <ImageView
-        android:layout_width="300dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="146dp"
-        android:src="@mipmap/logo_dark"
-        />
+    <TextView
+        android:id="@+id/main_slogan_1"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/slogan_part_1"
+        android:paddingStart="16dp"
+        android:paddingEnd="10dp"
+        android:layout_marginTop="50dp"
+        android:fontFamily="@font/suse"
+        android:textAlignment="textStart"
+        android:textSize="36sp" />
 
+    <TextView
+        android:id="@+id/main_slogan_2"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="@string/slogan_part_2"
+        android:paddingStart="16dp"
+        android:paddingEnd="10dp"
+        android:fontFamily="@font/suse"
+        android:textAlignment="textStart"
+        android:textSize="36sp" />
+    
     <RelativeLayout
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
@@ -27,11 +42,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginBottom="20dp"
+            android:layout_marginBottom="15dp"
             android:visibility="visible"
             android:indeterminate="true"
             android:indeterminateTintMode="src_atop"
-            android:indeterminateTint="#262D37"
+            android:maxHeight="35dip"
+            android:minHeight="35dip"
+            android:minWidth="100dip"
+            android:maxWidth="100dip"
+            android:indeterminateTint="#fff"
             />
         <TextView
             android:id="@+id/label1"
@@ -39,7 +58,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Loading..."
-            android:textColor="#262D37"
+            android:textColor="#fff"
+            android:fontFamily="@font/suse"
+            android:textSize="20sp"
             android:layout_centerHorizontal="true"
         />
 
