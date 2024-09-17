@@ -16,6 +16,8 @@ import LandingPage from './src/Screens/LandingPage';
 import LottieView from 'lottie-react-native';
 import { NavigationContainer } from '@react-navigation/native';
 // import { createDrawerNavigator } from '@react-navigation/drawer';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+
 
 import RoutePage from './src/Screens/RoutePage';
 import DetailPage from './src/Screens/DetailPage';
@@ -48,7 +50,7 @@ const App = () => {
         </View>
         <NavigationContainer>
           {/* <Tab.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={{headerShown: false}}> */}
-            {/* <Tab.Screen name="Home" component={LandingPage} />
+          {/* <Tab.Screen name="Home" component={LandingPage} />
             <Tab.Screen name="Route" component={RoutePage} options={{drawerItemStyle: { display: 'none' }}}/>
             <Tab.Screen name="CarDetail" component={DetailPage} options={{drawerItemStyle: { display: 'none' }}} />
             <Tab.Screen name="Terms" component={TermsAndConditions} />
@@ -56,15 +58,36 @@ const App = () => {
             <Tab.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{drawerItemStyle: { display: 'none' }}} />
             <Tab.Screen name="AddRoute" component={AddRouteScreen} options={{drawerItemStyle: { display: 'none' }}} />
             <Tab.Screen name="EditRoute" component={EditRouteScreen} options={{drawerItemStyle: { display: 'none' }}} /> */}
-          <Tab.Navigator screenOptions={{headerShown: false}}>
+          <Tab.Navigator
+            screenOptions={({ route }) => ({
+              tabBarIcon: ({ focused, color, size }) => {
+                let iconName;
+
+                if (route.name === 'Home') {
+                  // iconName = focused ? 'home' : 'home-outline';
+                  iconName = 'home'
+                } else if (route.name === 'Terms') {
+                  iconName = 'notes';
+                } else if (route.name === 'Login') {
+                  iconName = 'person';
+                }
+
+                return <Icon name={iconName} size={size} color={color} />;
+              },
+              headerShown: false
+            })}
+            tabBarOptions={{
+              activeTintColor: Colors.primary,
+              inactiveTintColor: Colors.primary,
+            }}>
             <Tab.Screen name="Home" component={LandingPage} />
-            <Tab.Screen name="Route" component={RoutePage} options={{tabBarButton: () => null,tabBarVisible: false}}/>
-            <Tab.Screen name="CarDetail" component={DetailPage} options={{tabBarButton: () => null,tabBarVisible: false}} />
+            <Tab.Screen name="Route" component={RoutePage} options={{ tabBarButton: () => null, tabBarVisible: false }} />
+            <Tab.Screen name="CarDetail" component={DetailPage} options={{ tabBarButton: () => null, tabBarVisible: false }} />
             <Tab.Screen name="Terms" component={TermsAndConditions} />
             <Tab.Screen name="Login" component={LoginScreen} />
-            <Tab.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{tabBarButton: () => null,tabBarVisible: false}} />
-            <Tab.Screen name="AddRoute" component={AddRouteScreen} options={{tabBarButton: () => null,tabBarVisible: false}} />
-            <Tab.Screen name="EditRoute" component={EditRouteScreen} options={{tabBarButton: () => null,tabBarVisible: false}} />
+            <Tab.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} />
+            <Tab.Screen name="AddRoute" component={AddRouteScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} />
+            <Tab.Screen name="EditRoute" component={EditRouteScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} />
           </Tab.Navigator>
         </NavigationContainer>
       </SafeAreaView>

@@ -75,7 +75,7 @@ const EditRouteScreen = ({ route, navigation }) => {
       const result = await response.json();
 
       Alert.alert('Success', 'Route updated successfully');
-      navigation.goBack(); // Go back to the previous screen
+      navigation.navigate('AdminRoutesList');
     } catch (error) {
       console.error('Error updating route:', error);
       Alert.alert('Error', 'Something went wrong. Please try again.');
