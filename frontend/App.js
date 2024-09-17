@@ -15,7 +15,7 @@ import SplashScreen from 'react-native-splash-screen';
 import LandingPage from './src/Screens/LandingPage';
 import LottieView from 'lottie-react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+// import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import RoutePage from './src/Screens/RoutePage';
 import DetailPage from './src/Screens/DetailPage';
@@ -26,7 +26,10 @@ import AdminRoutesListScreen from './src/Screens/AdminRoutesListScreen';
 import AddRouteScreen from './src/Screens/AddRouteScreen';
 import EditRouteScreen from './src/Screens/EditRouteScreen';
 
-const Drawer = createDrawerNavigator();
+// const Drawer = createDrawerNavigator();
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
 
 const App = () => {
   useEffect(() => {
@@ -44,16 +47,25 @@ const App = () => {
           </Text>
         </View>
         <NavigationContainer>
-          <Drawer.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={{headerShown: false}}>
-            <Drawer.Screen name="Home" component={LandingPage} />
-            <Drawer.Screen name="Route" component={RoutePage} options={{drawerItemStyle: { display: 'none' }}}/>
-            <Drawer.Screen name="CarDetail" component={DetailPage} options={{drawerItemStyle: { display: 'none' }}} />
-            <Drawer.Screen name="Terms" component={TermsAndConditions} />
-            <Drawer.Screen name="Login" component={LoginScreen} />
-            <Drawer.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{drawerItemStyle: { display: 'none' }}} />
-            <Drawer.Screen name="AddRoute" component={AddRouteScreen} options={{drawerItemStyle: { display: 'none' }}} />
-            <Drawer.Screen name="EditRoute" component={EditRouteScreen} options={{drawerItemStyle: { display: 'none' }}} />
-          </Drawer.Navigator>
+          {/* <Tab.Navigator drawerContent={props => <CustomDrawer {...props} />} screenOptions={{headerShown: false}}> */}
+            {/* <Tab.Screen name="Home" component={LandingPage} />
+            <Tab.Screen name="Route" component={RoutePage} options={{drawerItemStyle: { display: 'none' }}}/>
+            <Tab.Screen name="CarDetail" component={DetailPage} options={{drawerItemStyle: { display: 'none' }}} />
+            <Tab.Screen name="Terms" component={TermsAndConditions} />
+            <Tab.Screen name="Login" component={LoginScreen} />
+            <Tab.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{drawerItemStyle: { display: 'none' }}} />
+            <Tab.Screen name="AddRoute" component={AddRouteScreen} options={{drawerItemStyle: { display: 'none' }}} />
+            <Tab.Screen name="EditRoute" component={EditRouteScreen} options={{drawerItemStyle: { display: 'none' }}} /> */}
+          <Tab.Navigator screenOptions={{headerShown: false}}>
+            <Tab.Screen name="Home" component={LandingPage} />
+            <Tab.Screen name="Route" component={RoutePage} options={{tabBarButton: () => null,tabBarVisible: false}}/>
+            <Tab.Screen name="CarDetail" component={DetailPage} options={{tabBarButton: () => null,tabBarVisible: false}} />
+            <Tab.Screen name="Terms" component={TermsAndConditions} />
+            <Tab.Screen name="Login" component={LoginScreen} />
+            <Tab.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{tabBarButton: () => null,tabBarVisible: false}} />
+            <Tab.Screen name="AddRoute" component={AddRouteScreen} options={{tabBarButton: () => null,tabBarVisible: false}} />
+            <Tab.Screen name="EditRoute" component={EditRouteScreen} options={{tabBarButton: () => null,tabBarVisible: false}} />
+          </Tab.Navigator>
         </NavigationContainer>
       </SafeAreaView>
 

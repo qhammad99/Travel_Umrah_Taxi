@@ -17,7 +17,7 @@ class MainActivity : ReactActivity() {
 
   override fun onCreate(savedInstanceState: Bundle?) {
       SplashScreen.show(this, R.style.SecondSplash, true)
-      super.onCreate(savedInstanceState)
+      super.onCreate(null)
   }
 
   /**
