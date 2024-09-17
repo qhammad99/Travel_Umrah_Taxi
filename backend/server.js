@@ -83,9 +83,48 @@ app.post('/routes', authenticate, (req, res) => {
     return res.status(400).json({ message: 'Required fields are missing' });
   }
 
+  const available_cars = [
+    {
+      "car_name": "CAMRY",
+      "image_name": "CAMRY.png",
+      "no_passegers": 4,
+      "no_bags": 3,
+      "price": 0,
+      "currency_symbol": "SAR",
+      "enabled": false
+    },
+    {
+      "car_name": "STARIA",
+      "image_name": "STARIA.png",
+      "no_passegers": 7,
+      "no_bags": 8,
+      "price": 0,
+      "currency_symbol": "SAR",
+      "enabled": false
+    },
+    {
+      "car_name": "GMC",
+      "image_name": "GMC.png",
+      "no_passegers": 7,
+      "no_bags": 8,
+      "price": 0,
+      "currency_symbol": "SAR",
+      "enabled": false
+    },
+    {
+      "car_name": "HIACE",
+      "image_name": "HIACE.png",
+      "no_passegers": 12,
+      "no_bags": 15,
+      "price": 0,
+      "currency_symbol": "SAR",
+      "enabled": false
+    }
+  ]
+
   let id = Math.floor(new Date().getTime()/1000.0);
   const routes = readData();
-  const newRoute = { id, name, "available_cars": [] };
+  const newRoute = { id, name, "available_cars": available_cars };
   routes.push(newRoute);
   writeData(routes);
   res.status(201).json(newRoute);

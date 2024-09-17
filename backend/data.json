@@ -9,7 +9,8 @@
         "no_passegers": 4,
         "no_bags": 3,
         "price": 300,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "STARIA",
@@ -17,7 +18,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 350,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "GMC",
@@ -25,7 +27,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 600,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "HIACE",
@@ -33,7 +36,8 @@
         "no_passegers": 12,
         "no_bags": 15,
         "price": 450,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       }
     ]
   },
@@ -47,7 +51,8 @@
         "no_passegers": 4,
         "no_bags": 3,
         "price": 250,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "STARIA",
@@ -55,7 +60,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 350,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "GMC",
@@ -63,7 +69,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 500,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "HIACE",
@@ -71,7 +78,8 @@
         "no_passegers": 12,
         "no_bags": 15,
         "price": 400,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       }
     ]
   },
@@ -85,7 +93,8 @@
         "no_passegers": 4,
         "no_bags": 3,
         "price": 500,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "STARIA",
@@ -93,7 +102,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 700,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "GMC",
@@ -101,7 +111,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 1200,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "HIACE",
@@ -109,7 +120,8 @@
         "no_passegers": 12,
         "no_bags": 15,
         "price": 800,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       }
     ]
   },
@@ -123,7 +135,8 @@
         "no_passegers": 4,
         "no_bags": 3,
         "price": 250,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "STARIA",
@@ -131,7 +144,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 300,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "GMC",
@@ -139,7 +153,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 450,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "HIACE",
@@ -147,7 +162,8 @@
         "no_passegers": 12,
         "no_bags": 15,
         "price": 400,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       }
     ]
   },
@@ -161,7 +177,8 @@
         "no_passegers": 4,
         "no_bags": 3,
         "price": 500,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "STARIA",
@@ -169,7 +186,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 700,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "GMC",
@@ -177,7 +195,8 @@
         "no_passegers": 7,
         "no_bags": 8,
         "price": 1200,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       },
       {
         "car_name": "HIACE",
@@ -185,7 +204,8 @@
         "no_passegers": 12,
         "no_bags": 15,
         "price": 800,
-        "currency_symbol": "SAR"
+        "currency_symbol": "SAR",
+        "enabled": false
       }
     ]
   }

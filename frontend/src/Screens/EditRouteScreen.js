@@ -9,35 +9,37 @@ import {
   ActivityIndicator,
   FlatList,
   Image,
+  Dimensions,
+  Switch
 } from 'react-native';
-import Icon from 'react-native-vector-icons/Feather'; // Ensure you have this installed
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import API from '../api';
+import Colors from '../colors/Colors';
+const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
 const EditRouteScreen = ({ route, navigation }) => {
-  const { routeId } = route.params; // Get routeId from navigation parameters
+  const { routeId } = route.params;
   const [routeName, setRouteName] = useState('');
   const [cars, setCars] = useState([]);
-  const [newCar, setNewCar] = useState({
-    car_name: '',
-    image_name: '',
-    no_passegers: '',
-    no_bags: '',
-    price: '',
-    currency_symbol: 'SAR',
-  });
   const [loading, setLoading] = useState(false);
 
-  useEffect(() => {
-    fetchRoute();
-  }, []);
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      fetchRoute();
+    });
+
+    return unsubscribe;
+  }, [navigation]);
 
   const fetchRoute = async () => {
     setLoading(true);
     try {
-      const response = await fetch(`http://1.2.3.54:3000/routes/${routeId}`); // Adjust URL
+      const response = await fetch(`${API.get_selected_route}/${routeId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch route');
       }
       const result = await response.json();
+      // console.log("result: ", result)
       setRouteName(result.name);
       setCars(result.available_cars);
     } catch (error) {
@@ -46,22 +48,6 @@ const EditRouteScreen = ({ route, navigation }) => {
     } finally {
       setLoading(false);
     }
-  };
-
-  const handleAddCar = () => {
-    if (!newCar.car_name || !newCar.image_name || !newCar.no_passegers || !newCar.no_bags || !newCar.price) {
-      Alert.alert('Error', 'Please fill in all car details.');
-      return;
-    }
-    setCars([...cars, newCar]);
-    setNewCar({
-      car_name: '',
-      image_name: '',
-      no_passegers: '',
-      no_bags: '',
-      price: '',
-      currency_symbol: 'SAR',
-    });
   };
 
   const handleUpdateRoute = async () => {
@@ -73,10 +59,11 @@ const EditRouteScreen = ({ route, navigation }) => {
     setLoading(true);
 
     try {
-      const response = await fetch(`http://1.2.3.54:3000/routes/${routeId}`, { // Adjust URL
+      const response = await fetch(`${API.get_selected_route}/${routeId}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer testuser:testpassword`,
         },
         body: JSON.stringify({ name: routeName, available_cars: cars }),
       });
@@ -97,35 +84,54 @@ const EditRouteScreen = ({ route, navigation }) => {
     }
   };
 
-  const handleDeleteCar = (index) => {
-    Alert.alert(
-      'Confirm Deletion',
-      'Are you sure you want to delete this car?',
-      [
-        { text: 'Cancel', style: 'cancel' },
-        { text: 'Delete', onPress: () => setCars(cars.filter((_, i) => i !== index)) },
-      ]
-    );
-  };
+  const updatePrice = (index, new_price) => {
+    let current_list = [...cars];
+    current_list[index].price = new_price;
+    setCars(current_list);
+  }
 
   const renderCarItem = ({ item, index }) => (
-    <View style={styles.carItem}>
-      <Image
-        source={{ uri: `http://1.2.3.54:3000/images/${item.image_name}` }} // Adjust URL
-        style={styles.carImage}
-      />
-      <View style={styles.carDetails}>
-        <Text style={styles.carName}>{item.car_name}</Text>
-        <Text>Passengers: {item.no_passegers}</Text>
-        <Text>Bags: {item.no_bags}</Text>
-        <Text>Price: {item.price} {item.currency_symbol}</Text>
-        <TouchableOpacity
-          style={styles.deleteButton}
-          onPress={() => handleDeleteCar(index)}
-        >
-          <Icon name="trash" size={24} color="#FF4D4D" />
-        </TouchableOpacity>
+    <View style={item.enabled?styles.selector_container: styles.selector_container_disabled}>
+      <View style={styles.car_info}>
+        <Text style={styles.car_heading}>
+          {item.car_name}
+        </Text>
+        <View style={styles.second_row_holder}>
+          <View style={styles.mini_icon_container}>
+            <Icon name="luggage" size={24} color="#414141" />
+            <Text style={styles.number_style}> {item.no_bags}</Text>
+          </View>
+          <View style={styles.mini_icon_container}>
+            <Icon name="person" size={24} color="#414141" />
+            <Text style={styles.number_style}> {item.no_passegers}</Text>
+          </View>
+        </View>
       </View>
+
+      <View style={{ flexDirection: 'column', width: '20%', alignItems: 'center' }}>
+        <Text style={styles.currency_holder}>
+          {item.currency_symbol}
+        </Text>
+        <TextInput
+          style={styles.input_price}
+          placeholder="price"
+          placeholderTextColor="#888"
+          value={item.price.toString()}
+          onChangeText={(new_price) => updatePrice(index, new_price)}
+        />
+      </View>
+
+      <Switch
+        value={item.enabled}
+        onValueChange={(newValue) => {
+          let updatedCars = [...cars];
+          updatedCars[index].enabled = newValue;
+          setCars(updatedCars);
+        }}
+        thumbColor='#81b0ff'
+        trackColor={{ false: '#767577', true: '#81b0ff' }}
+        style={styles.toggle_switch}
+      />
     </View>
   );
 
@@ -138,8 +144,8 @@ const EditRouteScreen = ({ route, navigation }) => {
         value={routeName}
         onChangeText={setRouteName}
       />
-      
-      <Text style={styles.subTitle}>Available Cars</Text>
+
+      <Text style={styles.subTitle}>Cars List</Text>
       {loading ? (
         <ActivityIndicator size="large" color="#007BFF" />
       ) : (
@@ -151,47 +157,6 @@ const EditRouteScreen = ({ route, navigation }) => {
         />
       )}
 
-      <Text style={styles.subTitle}>Add New Car</Text>
-      <TextInput
-        style={styles.input}
-        placeholder="Car Name"
-        value={newCar.car_name}
-        onChangeText={(text) => setNewCar({ ...newCar, car_name: text })}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Image Name"
-        value={newCar.image_name}
-        onChangeText={(text) => setNewCar({ ...newCar, image_name: text })}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Number of Passengers"
-        keyboardType="numeric"
-        value={newCar.no_passegers}
-        onChangeText={(text) => setNewCar({ ...newCar, no_passegers: text })}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Number of Bags"
-        keyboardType="numeric"
-        value={newCar.no_bags}
-        onChangeText={(text) => setNewCar({ ...newCar, no_bags: text })}
-      />
-      <TextInput
-        style={styles.input}
-        placeholder="Price"
-        keyboardType="numeric"
-        value={newCar.price}
-        onChangeText={(text) => setNewCar({ ...newCar, price: text })}
-      />
-      <TouchableOpacity
-        style={styles.addButton}
-        onPress={handleAddCar}
-      >
-        <Text style={styles.buttonText}>Add Car</Text>
-      </TouchableOpacity>
-
       <TouchableOpacity
         style={styles.button}
         onPress={handleUpdateRoute}
@@ -202,6 +167,14 @@ const EditRouteScreen = ({ route, navigation }) => {
         ) : (
           <Text style={styles.buttonText}>Update Route</Text>
         )}
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        style={styles.button}
+        onPress={()=>navigation.navigate('AdminRoutesList')}
+        disabled={loading}
+      >
+        <Text style={styles.buttonText}>Go Back</Text>
       </TouchableOpacity>
     </View>
   );
@@ -216,65 +189,43 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: 'bold',
+    color: '#333',
     marginBottom: 20,
   },
   subTitle: {
     fontSize: 18,
     fontWeight: 'bold',
     marginVertical: 10,
+    color: '#333',
   },
   input: {
     width: '100%',
     padding: 10,
-    marginBottom: 15,
     borderRadius: 5,
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#ddd',
-  },
-  carItem: {
-    flexDirection: 'row',
-    alignItems: 'center',
     marginBottom: 15,
-    padding: 10,
-    backgroundColor: '#fff',
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#ddd',
+    color: '#151515'
   },
-  carImage: {
-    width: 60,
-    height: 60,
-    marginRight: 10,
-    borderRadius: 5,
-  },
-  carDetails: {
-    flex: 1,
-  },
-  carName: {
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
-  deleteButton: {
-    marginTop: 10,
-    alignSelf: 'flex-end',
-  },
-  addButton: {
+  input_price: {
     width: '100%',
-    padding: 15,
     borderRadius: 5,
-    backgroundColor: '#007BFF',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginBottom: 15,
+    backgroundColor: '#fff',
+    borderWidth: 1,
+    borderColor: '#ddd',
+    paddingVertical: -10,
+    color: '#151515'
   },
   button: {
-    width: '100%',
+    alignSelf:'center',
+    width: '90%',
     padding: 15,
     borderRadius: 5,
-    backgroundColor: '#007BFF',
+    backgroundColor: Colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
+    margin: 3
   },
   buttonText: {
     color: '#fff',
@@ -286,6 +237,63 @@ const styles = StyleSheet.create({
     color: '#888',
     marginTop: 20,
   },
+  selector_container: {
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 10,
+    backgroundColor: Colors.primary,
+    borderRadius: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    padding: 10,
+    elevation: 8,
+    justifyContent: 'space-between'
+  },
+  selector_container_disabled: {
+    width: '90%',
+    alignSelf: 'center',
+    marginTop: 10,
+    backgroundColor: Colors.primary,
+    opacity: 0.5,
+    borderRadius: 10,
+    display: 'flex',
+    flexDirection: 'row',
+    padding: 10,
+    elevation: 8,
+    justifyContent: 'space-between'
+  },
+  car_heading: {
+    fontFamily: 'Outfit-SemiBold',
+    fontWeight: '400',
+    fontSize: 18,
+    // textAlign: 'center',
+    color: '#414141',
+    paddingLeft: 10
+  },
+  currency_holder: {
+    fontFamily: 'Outfit-SemiBold',
+    fontWeight: '400',
+    fontSize: 16,
+    textAlign: 'center'
+  },
+  second_row_holder: {
+    flexDirection: 'row',
+    marginTop: 4,
+    // justifyContent: 'space-evenly',
+    paddingLeft: 10
+  },
+  mini_icon_container: {
+    display: 'flex',
+    flexDirection: 'row',
+    marginRight: 10
+  },
+  number_style: {
+    fontFamily: 'Outfit-Medium',
+    fontWeight: '400',
+    fontSize: 14,
+    textAlign: 'center',
+    color: '#414141'
+  }
 });
 
 export default EditRouteScreen;

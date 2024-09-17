@@ -6,4 +6,5 @@ export default{
     get_routes_route: `http://${main_ip}:${main_port}/routes`,
     delete_routes_route: `http://${main_ip}:${main_port}/routes`,
     add_routes_route: `http://${main_ip}:${main_port}/routes`,
+    get_selected_route: `http://${main_ip}:${main_port}/routes`,
 };

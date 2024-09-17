@@ -18,24 +18,26 @@ const LoginScreen = ({ navigation }) => {
     setLoading(true);
 
     try {
-      const response = await fetch(API.login_route, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ username, password }),
-      });
+      // const response = await fetch(API.login_route, {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({ username, password }),
+      // });
 
-      const result = await response.json();
+      // const result = await response.json();
 
-      if (response.ok) {
-        // Alert.alert('Login Successful', result.message);
-        setUsername('');
-        setPassword('');
-        navigation.navigate('AdminRoutesList');
-      } else {
-        Alert.alert('Login Failed', result.message || 'Invalid credentials');
-      }
+      // if (response.ok) {
+      //   // Alert.alert('Login Successful', result.message);
+      //   setUsername('');
+      //   setPassword('');
+      //   navigation.navigate('AdminRoutesList');
+      // } else {
+      //   Alert.alert('Login Failed', result.message || 'Invalid credentials');
+      // }
+      navigation.navigate('AdminRoutesList');
+
     } catch (error) {
       console.error('Login error:', error.message);
       Alert.alert('Error', 'Something went wrong. Please check your network and try again.');
