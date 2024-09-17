@@ -207,7 +207,8 @@ const styles = StyleSheet.create({
         padding: 0,
         marginTop: 2,
         marginLeft:5,
-        textAlign: 'left'
+        textAlign: 'left',
+        color: '#151515'
     },
     icon_main: {
         fontFamily: 'Outfit-Medium',
@@ -215,7 +216,8 @@ const styles = StyleSheet.create({
         padding: 0,
         marginTop: -4,
         marginLeft:5,
-        textAlign: 'left'
+        textAlign: 'left',
+        color: '#151515'
     },
     icon_sub_main: {
         fontFamily: 'Outfit-Medium',
@@ -223,7 +225,8 @@ const styles = StyleSheet.create({
         padding: 0,
         marginTop: -4,
         marginLeft:5,
-        textAlign: 'left'
+        textAlign: 'left',
+        color: '#151515'
     },
     contact_container:{
         flexDirection:'row',
