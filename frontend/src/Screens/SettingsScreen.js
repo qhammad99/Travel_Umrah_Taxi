@@ -1,4 +1,3 @@
-// SettingsScreen.js
 import React, { useEffect, useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
@@ -6,24 +5,35 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import Colors from '../colors/Colors';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-const SettingsScreen = ({ navigation, updateLanguage }) => {
+const SettingsScreen = ({ navigation, updateLanguage, updateTheme }) => {
   const [language, setLanguage] = useState('en');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    const loadLanguage = async () => {
+    const loadSettings = async () => {
       const savedLanguage = await AsyncStorage.getItem('language');
+      const savedTheme = await AsyncStorage.getItem('theme');
       if (savedLanguage) {
         setLanguage(savedLanguage);
       }
+      if (savedTheme) {
+        setTheme(savedTheme);
+      }
     };
 
-    loadLanguage();
-  }, []);
+    loadSettings();
+  }, [theme, language]);
 
   const handleLanguageChange = async (lang) => {
     setLanguage(lang);
-    updateLanguage(lang);  // Call the prop function to update language in App.js
+    updateLanguage(lang);
     await AsyncStorage.setItem('language', lang);
+  };
+
+  const handleThemeChange = async (selectedTheme) => {
+    setTheme(selectedTheme);
+    updateTheme(selectedTheme);
+    await AsyncStorage.setItem('theme', selectedTheme);
   };
 
   const translations = {
@@ -31,11 +41,13 @@ const SettingsScreen = ({ navigation, updateLanguage }) => {
       title: 'Settings',
       terms: 'Terms and Conditions',
       chooseLanguage: 'Choose Language',
+      chooseTheme: 'Choose Theme',
     },
     ar: {
       title: 'الإعدادات',
       terms: 'الشروط والأحكام',
       chooseLanguage: 'اختر اللغة',
+      chooseTheme: 'اختر السمة',
     },
   };
 
@@ -52,27 +64,41 @@ const SettingsScreen = ({ navigation, updateLanguage }) => {
       component: (
         <Picker
           selectedValue={language}
-          style={styles.picker}
+          style={[styles.picker, theme=='light'?styles.dark_font:styles.light_font]}
           onValueChange={(itemValue) => handleLanguageChange(itemValue)}
-          dropdownIconColor={Colors.darkTextColor}
+          dropdownIconColor={theme == 'light' ? Colors.darkTextColor: Colors.lightTextColor}
         >
           <Picker.Item label="English" value="en" />
           <Picker.Item label="Arabic" value="ar" />
         </Picker>
       ),
     },
+    {
+      title: lang.chooseTheme,
+      component: (
+        <Picker
+          selectedValue={theme}
+          style={[styles.picker, theme=='light'?styles.dark_font:styles.light_font]}
+          onValueChange={(itemValue) => handleThemeChange(itemValue)}
+          dropdownIconColor={theme == 'light' ? Colors.darkTextColor: Colors.lightTextColor}
+        >
+          <Picker.Item label="Light" value="light" />
+          <Picker.Item label="Dark" value="dark" />
+        </Picker>
+      ),
+    },
   ];
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>{lang.title}</Text>
+    <View style={theme == 'light' ? styles.container: styles.container_dark}>
+      <Text style={theme == 'light' ? styles.title: styles.title_dark}>{lang.title}</Text>
       <FlatList
         data={settingsOptions}
         renderItem={({ item }) => (
-          <View style={styles.optionContainer}>
+          <View style={theme == 'light' ? styles.optionContainer: styles.optionContainer_dark}>
             <TouchableOpacity style={styles.option} onPress={item.onPress}>
               <Icon name={item.icon} size={24} color={Colors.primary} />
-              <Text style={styles.optionText}>{item.title}</Text>
+              <Text style={[styles.optionText, theme=='light'?styles.dark_font:styles.light_font]}>{item.title}</Text>
             </TouchableOpacity>
             {item.component}
           </View>
@@ -89,10 +115,21 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#F5F5F5',
   },
+  container_dark: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#222',
+  },
   title: {
     fontSize: 28,
     marginBottom: 20,
     color: Colors.darkTextColor,
+    fontWeight: 'bold',
+  },
+  title_dark: {
+    fontSize: 28,
+    marginBottom: 20,
+    color: Colors.lightTextColor,
     fontWeight: 'bold',
   },
   optionContainer: {
@@ -101,6 +138,15 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     elevation: 2,
     padding: 15,
+    color: Colors.darkTextColor
+  },
+  optionContainer_dark: {
+    backgroundColor: '#404040',
+    marginVertical: 8,
+    borderRadius: 8,
+    elevation: 2,
+    padding: 15,
+    color: Colors.lightTextColor
   },
   option: {
     flexDirection: 'row',
@@ -109,7 +155,6 @@ const styles = StyleSheet.create({
   },
   optionText: {
     fontSize: 18,
-    color: Colors.darkTextColor,
     flex: 1,
     marginLeft: 10,
   },
@@ -117,8 +162,13 @@ const styles = StyleSheet.create({
     height: 50,
     width: '100%',
     marginTop: 10,
-    color: Colors.darkTextColor,
   },
+  light_font:{
+    color: Colors.lightTextColor
+  },
+  dark_font: {
+    color: Colors.darkTextColor
+  }
 });
 
 export default SettingsScreen;

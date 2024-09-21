@@ -1,4 +1,3 @@
-// App.js
 import React, { useEffect, useState } from 'react';
 import {
   SafeAreaView,
@@ -27,17 +26,22 @@ const Tab = createBottomTabNavigator();
 
 const App = () => {
   const [language, setLanguage] = useState('en');
+  const [theme, setTheme] = useState('light');
 
   useEffect(() => {
-    const loadLanguage = async () => {
+    const loadSettings = async () => {
       const savedLanguage = await AsyncStorage.getItem('language');
+      const savedTheme = await AsyncStorage.getItem('theme');
       if (savedLanguage) {
         setLanguage(savedLanguage);
+      }
+      if (savedTheme) {
+        setTheme(savedTheme);
       }
       SplashScreen.hide();
     };
 
-    loadLanguage();
+    loadSettings();
   }, []);
 
   const updateLanguage = async (lang) => {
@@ -45,10 +49,14 @@ const App = () => {
     await AsyncStorage.setItem('language', lang);
   };
 
+  const updateTheme = async (selectedTheme) => {
+    setTheme(selectedTheme);
+    await AsyncStorage.setItem('theme', selectedTheme);
+  };
+
   const texts = {
     en: {
       title: "Travel Umrah Taxi",
-      // welcome: "Welcome to Travel Umrah Taxi",
       home: "Home",
       settings: "Settings",
       route: "Route",
@@ -56,7 +64,6 @@ const App = () => {
     },
     ar: {
       title: "تاكسي سفر عمرة",
-      // welcome: "مرحبا بكم في تاكسي سفر عمرة",
       home: "الرئيسية",
       settings: "الإعدادات",
       route: "الطريق",
@@ -88,20 +95,24 @@ const App = () => {
                 return <Icon name={iconName} size={size} color={color} />;
               },
               headerShown: false,
+              tabBarStyle: {
+                backgroundColor: theme === 'dark' ? '#222' : '#fff',
+              },
             })}
             tabBarOptions={{
-              activeTintColor: Colors.primary,
-              inactiveTintColor: Colors.primary,
+              activeTintColor: theme == 'light' ? Colors.primary : Colors.lightTextColor,
+              inactiveTintColor: theme == 'light' ? Colors.primary : Colors.lightTextColor,
             }}
+            
           >
             <Tab.Screen name="Home" options={{tabBarLabel: texts[language].home}}>
-              {(props) => <LandingPage {...props} language={language} />}
+              {(props) => <LandingPage {...props} language={language} theme={theme} />}
             </Tab.Screen>
             <Tab.Screen name="Route" component={RoutePage} options={{ tabBarButton: () => null, tabBarVisible: false }} />
             <Tab.Screen name="CarDetail" component={DetailPage} options={{ tabBarButton: () => null, tabBarVisible: false }} />
             <Tab.Screen name="Terms" component={TermsAndConditions} options={{ tabBarButton: () => null, tabBarVisible: false }} />
             <Tab.Screen name="Settings" options={{tabBarLabel: texts[language].settings}}>
-              {(props) => <SettingsScreen {...props} updateLanguage={updateLanguage} />}
+              {(props) => <SettingsScreen {...props} updateLanguage={updateLanguage} updateTheme={updateTheme} language={language} theme={theme}/>}
             </Tab.Screen>
             <Tab.Screen name="Login" component={LoginScreen} options={{tabBarLabel: texts[language].login}}/>
             <Tab.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} />

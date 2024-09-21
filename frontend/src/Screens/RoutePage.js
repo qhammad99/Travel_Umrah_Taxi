@@ -8,7 +8,7 @@ import { Picker } from '@react-native-picker/picker';
 import CarSelector from '../Components/CarSelector';
 
 const RoutePage = ({ route, navigation }) => {
-    const { value, route_data, language } = route.params; 
+    const { value, route_data, language, theme } = route.params; 
     const [selectedRoute, setSelectedRoute] = useState(value);
 
     useEffect(() => {
@@ -20,13 +20,13 @@ const RoutePage = ({ route, navigation }) => {
     };
 
     const handleDetailClick = (selected_car) => {
-        navigation.navigate('CarDetail', { path_detail: route_data[language][selectedRoute], selected_car, language });
+        navigation.navigate('CarDetail', { path_detail: route_data[language][selectedRoute], selected_car, language, theme });
     };
 
     return (
         <ImageBackground
-            source={require('../../assets/photos/Group5.png')}
-            style={styles.bgImg}
+            source={theme == 'light' ? require('../../assets/photos/Group5.png') : require('../../assets/photos/Group6.png')}
+            style={theme == 'light' ? styles.bgImg : styles.bgImgDark}
             imageStyle={{ opacity: 0.1 }}
         >
             {/* Dropdown for routes */}
@@ -72,6 +72,10 @@ const styles = StyleSheet.create({
     bgImg: {
         flex: 1,
         backgroundColor: '#fff'
+    },
+    bgImgDark: {
+        flex: 1,
+        backgroundColor: '#2a2a2a'
     },
     dropDownContainer: {
         width: '90%',

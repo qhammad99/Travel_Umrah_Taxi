@@ -9,7 +9,7 @@ import { Picker } from '@react-native-picker/picker';
 import LottieView from 'lottie-react-native';
 import Colors from '../colors/Colors';
 
-const LandingPage = ({ navigation, language }) => {
+const LandingPage = ({ navigation, language, theme }) => {
     const routeData = {
         "en": [
             { id: '0', name: "Select Route", available_cars: [] },
@@ -440,7 +440,7 @@ const LandingPage = ({ navigation, language }) => {
     }
 
     const handleRouteClick = (value) => {
-        if (value > 0) navigation.navigate('Route', { value, route_data: routeData, language });
+        if (value > 0) navigation.navigate('Route', { value, route_data: routeData, language, theme });
     };
 
     const handleWhatsapp = () => {
@@ -462,8 +462,8 @@ const LandingPage = ({ navigation, language }) => {
 
     return (
         <ImageBackground
-            source={require('../../assets/photos/Group5.png')}
-            style={styles.bgImg}
+            source={theme == 'light' ? require('../../assets/photos/Group5.png') : require('../../assets/photos/Group6.png')}
+            style={theme == 'light' ? styles.bgImg : styles.bgImgDark}
             imageStyle={{ opacity: 0.1 }}
         >
             <LottieView
@@ -476,12 +476,12 @@ const LandingPage = ({ navigation, language }) => {
                 <Picker
                     selectedValue={routeData.en[0].id}
                     style={{
-                        backgroundColor: Colors.primary,
-                        color: '#fff',
+                        backgroundColor: theme == 'light' ? Colors.primary : '#d3d3d3',
+                        color: theme == 'light' ? Colors.lightTextColor : Colors.darkTextColor,
                         fontSize: 18
                     }}
                     onValueChange={(itemValue) => handleRouteClick(itemValue)}
-                    dropdownIconColor={'#fff'}
+                    dropdownIconColor={theme == 'light' ? Colors.lightTextColor : Colors.darkTextColor}
                 >
                     {routeData[language]?.map(item => (
                         <Picker.Item
@@ -500,6 +500,10 @@ const styles = StyleSheet.create({
     bgImg: {
         flex: 1,
         backgroundColor: '#fff'
+    },
+    bgImgDark: {
+        flex: 1,
+        backgroundColor: '#2a2a2a'
     },
     taxiVector: {
         marginTop: 20,

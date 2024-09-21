@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
     View,
     Text,
@@ -16,7 +16,11 @@ import FonIcon from 'react-native-vector-icons/FontAwesome5';
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
 const DetailPage = ({ route }) => {
-    const { path_detail, selected_car, language } = route.params;
+    const { path_detail, selected_car, language, theme } = route.params;
+    // console.log("theme: ", theme)
+
+    useEffect(()=>{
+    }, [theme, language]);
     let splitted_path;
     if(language == 'en') 
         splitted_path= path_detail.name.split(' to ');
@@ -75,11 +79,11 @@ const DetailPage = ({ route }) => {
 
     return (
         <ImageBackground
-            source={require('../../assets/photos/Group5.png')}
-            style={styles.bgImg}
+            source={theme == 'light' ? require('../../assets/photos/Group5.png') : require('../../assets/photos/Group6.png')}
+            style={theme == 'light' ? styles.bgImg : styles.bgImgDark}
             imageStyle={{ opacity: 0.1 }}
         >
-            <View style={styles.div_container}>
+            <View style={theme == 'light' ? styles.div_container : styles.div_container_dark}>
                 <Image
                     source={selected_car.image_name}
                     style={styles.image_dis}
@@ -90,27 +94,27 @@ const DetailPage = ({ route }) => {
                     <View style={styles.break_line_main} />
 
                     <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
-                        <Icon name="directions-car" size={26} color="#414141" />
+                        <Icon name="directions-car" size={30} color={theme == 'light' ? "#414141" : Colors.lightTextColor} />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>{translations[language].carModel}</Text>
-                            <Text style={styles.icon_main}>{selected_car.car_name}</Text>
+                            <Text style={[styles.icon_label, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].carModel}</Text>
+                            <Text style={[styles.icon_main, theme=='light'?styles.dark_font:styles.light_font]}>{selected_car.car_name}</Text>
                         </View>
                     </View>
 
                     <View style={{flexDirection:'row', justifyContent: language == 'en' ? 'flex-start' : 'flex-end'}}>
                     <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
-                        <Icon name="person" size={26} color="#414141" />
+                        <Icon name="person" size={30} color={theme == 'light' ? "#414141" : Colors.lightTextColor} />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>{translations[language].passengersCapacity}</Text>
-                            <Text style={styles.icon_main}>{selected_car.no_passegers}</Text>
+                            <Text style={[styles.icon_label, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].passengersCapacity}</Text>
+                            <Text style={[styles.icon_main, theme=='light'?styles.dark_font:styles.light_font]}>{selected_car.no_passegers}</Text>
                         </View>
                     </View>
 
                     <View style={language == 'en'? styles.side_route_container : styles.route_container_reverse}>
-                        <Icon name="luggage" size={26} color="#414141" />
+                        <Icon name="luggage" size={30} color={theme == 'light' ? "#414141" : Colors.lightTextColor} />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>{translations[language].luggageCapacity}</Text>
-                            <Text style={styles.icon_main}>{selected_car.no_bags}</Text>
+                            <Text style={[styles.icon_label, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].luggageCapacity}</Text>
+                            <Text style={[styles.icon_main, theme=='light'?styles.dark_font:styles.light_font]}>{selected_car.no_bags}</Text>
                         </View>
                     </View>
                     </View>
@@ -118,28 +122,28 @@ const DetailPage = ({ route }) => {
                     <View style={styles.break_line} />
 
                     <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
-                        <Icon name="location-on" size={26} color="green" />
+                        <Icon name="location-on" size={30} color="green" />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>{translations[language].pickUp}</Text>
-                            <Text style={styles.icon_main}>{splitted_path[0]}</Text>
+                            <Text style={[styles.icon_label, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].pickUp}</Text>
+                            <Text style={[styles.icon_main, theme=='light'?styles.dark_font:styles.light_font]}>{splitted_path[0]}</Text>
                         </View>
                     </View>
                     <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
-                        <Icon name="location-on" size={26} color="red" />
+                        <Icon name="location-on" size={30} color="red" />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>{translations[language].destination}</Text>
-                            <Text style={styles.icon_main}>{splitted_path[1]}</Text>
+                            <Text style={[styles.icon_label, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].destination}</Text>
+                            <Text style={[styles.icon_main, theme=='light'?styles.dark_font:styles.light_font]}>{splitted_path[1]}</Text>
                         </View>
                     </View>
 
                     <View style={styles.break_line} />
 
                     <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
-                        <Icon name="payments" size={26} color="green" />
+                        <Icon name="payments" size={30} color="green" />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>{translations[language].price}</Text>
-                            <Text style={styles.icon_main}>{selected_car.currency_symbol}{selected_car.price}</Text>
-                            <Text style={styles.icon_sub_main}>{translations[language].paymentNote}</Text>
+                            <Text style={[styles.icon_label, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].price}</Text>
+                            <Text style={[styles.icon_main, theme=='light'?styles.dark_font:styles.light_font]}>{selected_car.currency_symbol}{selected_car.price}</Text>
+                            <Text style={[styles.icon_sub_main, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].paymentNote}</Text>
                         </View>
                     </View>
 
@@ -162,18 +166,48 @@ const DetailPage = ({ route }) => {
     );
 };
 
-const styles = StyleSheet.create({
+const styles = StyleSheet.create({    bgImg: {
+    flex: 1,
+    backgroundColor: '#fff'
+},
+bgImgDark: {
+    flex: 1,
+    backgroundColor: '#2a2a2a'
+},
+    bgImg: {
+        flex: 1,
+        backgroundColor: '#fff'
+    },
+    bgImgDark: {
+        flex: 1,
+        backgroundColor: '#2a2a2a'
+    },
     div_container: {
         width: '90%',
         alignSelf: 'center',
         borderRadius: 10,
         backgroundColor: '#eee',
-        marginTop: 10,
+        marginTop: 30,
         marginBottom: 10,
         borderWidth: 1,
         borderColor: "#a7a7a7",
         elevation: 10,
         display: 'flex',
+        color: Colors.darkTextColor,
+        flexDirection: 'column'
+    },
+    div_container_dark: {
+        width: '90%',
+        alignSelf: 'center',
+        borderRadius: 10,
+        backgroundColor: '#404040',
+        marginTop: 30,
+        marginBottom: 10,
+        borderWidth: 1,
+        borderColor: "#a7a7a7",
+        elevation: 10,
+        display: 'flex',
+        color: '#fff',
         flexDirection: 'column'
     },
     image_dis: {
@@ -234,7 +268,12 @@ const styles = StyleSheet.create({
         padding: 0,
         marginTop: 2,
         marginLeft:5,
+    },
+    dark_font: {
         color: Colors.darkTextColor
+    },
+    light_font: {
+        color: Colors.lightTextColor
     },
     icon_main: {
         fontFamily: 'Outfit-Medium',
@@ -242,8 +281,7 @@ const styles = StyleSheet.create({
         padding: 0,
         marginTop: -4,
         marginLeft:5,
-        textAlign: 'left',
-        color: Colors.darkTextColor
+        textAlign: 'left'
     },
     icon_sub_main: {
         fontFamily: 'Outfit-Medium',
@@ -252,7 +290,6 @@ const styles = StyleSheet.create({
         marginTop: -4,
         marginLeft:5,
         textAlign: 'left',
-        color: Colors.darkTextColor
     },
     contact_container:{
         flexDirection:'row',
