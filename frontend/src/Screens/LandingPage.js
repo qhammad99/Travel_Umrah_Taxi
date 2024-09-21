@@ -1,218 +1,454 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-    SafeAreaView,
     View,
-    Text,
     StyleSheet,
     ImageBackground,
-    TouchableOpacity
+    Linking
 } from 'react-native';
-import Colors from '../colors/Colors';
 import { Picker } from '@react-native-picker/picker';
 import LottieView from 'lottie-react-native';
+import Colors from '../colors/Colors';
 
-const LandingPage = ({ navigation }) => {
-
-    let route_data = [
-        {
-            id: '1', name: 'Jeddah Airport to Makkah Hotel', available_cars: [
-                {
-                    car_name: 'CAMRY',
-                    image_name: require('../../assets/photos/CAMRY.png'),
-                    no_passegers: 4,
-                    no_bags: 3,
-                    price: 300,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'STARIA',
-                    image_name: require('../../assets/photos/STARIA.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 350,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'GMC',
-                    image_name: require('../../assets/photos/GMC.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 600,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'HIACE',
-                    image_name: require('../../assets/photos/HIACE.png'),
-                    no_passegers: 12,
-                    no_bags: 15,
-                    price: 450,
-                    currency_symbol: 'SAR'
-                },
-            ]
-        },
-        {
-            id: '2', name: 'Makkah Hotel to Makkah Ziyarah', available_cars: [
-                {
-                    car_name: 'CAMRY',
-                    image_name: require('../../assets/photos/CAMRY.png'),
-                    no_passegers: 4,
-                    no_bags: 3,
-                    price: 250,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'STARIA',
-                    image_name: require('../../assets/photos/STARIA.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 350,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'GMC',
-                    image_name: require('../../assets/photos/GMC.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 500,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'HIACE',
-                    image_name: require('../../assets/photos/HIACE.png'),
-                    no_passegers: 12,
-                    no_bags: 15,
-                    price: 400,
-                    currency_symbol: 'SAR'
-                },
-            ]
-        },
-        {
-            id: '3', name: 'Makkah Hotel to Madinah Hotel', available_cars: [
-                {
-                    car_name: 'CAMRY',
-                    image_name: require('../../assets/photos/CAMRY.png'),
-                    no_passegers: 4,
-                    no_bags: 3,
-                    price: 500,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'STARIA',
-                    image_name: require('../../assets/photos/STARIA.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 700,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'GMC',
-                    image_name: require('../../assets/photos/GMC.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 1200,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'HIACE',
-                    image_name: require('../../assets/photos/HIACE.png'),
-                    no_passegers: 12,
-                    no_bags: 15,
-                    price: 800,
-                    currency_symbol: 'SAR'
-                },
-            ]
-        },
-        {
-            id: '4', name: 'Madinah Hotel to Madinah Ziyarah', available_cars: [
-                {
-                    car_name: 'CAMRY',
-                    image_name: require('../../assets/photos/CAMRY.png'),
-                    no_passegers: 4,
-                    no_bags: 3,
-                    price: 250,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'STARIA',
-                    image_name: require('../../assets/photos/STARIA.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 300,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'GMC',
-                    image_name: require('../../assets/photos/GMC.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 450,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'HIACE',
-                    image_name: require('../../assets/photos/HIACE.png'),
-                    no_passegers: 12,
-                    no_bags: 15,
-                    price: 400,
-                    currency_symbol: 'SAR'
-                },
-            ]
-        },
-        {
-            id: '5', name: 'Makkah Hotel to Taif & Return', available_cars: [
-                {
-                    car_name: 'CAMRY',
-                    image_name: require('../../assets/photos/CAMRY.png'),
-                    no_passegers: 4,
-                    no_bags: 3,
-                    price: 500,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'STARIA',
-                    image_name: require('../../assets/photos/STARIA.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 700,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'GMC',
-                    image_name: require('../../assets/photos/GMC.png'),
-                    no_passegers: 7,
-                    no_bags: 8,
-                    price: 1200,
-                    currency_symbol: 'SAR'
-                },
-                {
-                    car_name: 'HIACE',
-                    image_name: require('../../assets/photos/HIACE.png'),
-                    no_passegers: 12,
-                    no_bags: 15,
-                    price: 800,
-                    currency_symbol: 'SAR'
-                },
-            ]
-        }
-    ];
-
-    route_data = [
-        { id: '0', name: 'Select Route', available_cars: [] },
-        ...route_data
-    ]
+const LandingPage = ({ navigation, language }) => {
+    const routeData = {
+        "en": [
+            { id: '0', name: "Select Route", available_cars: [] },
+            {
+                "id": "1",
+                "name": "Jeddah Airport to Makkah Hotel",
+                "available_cars": [
+                    {
+                        "car_name": "CAMRY",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 300,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "STARIA",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 350,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "GMC",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 600,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "HIACE",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 450,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "name": "Makkah Hotel to Makkah Ziyarah",
+                "available_cars": [
+                    {
+                        "car_name": "CAMRY",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 250,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "STARIA",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 350,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "GMC",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 500,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "HIACE",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 400,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "name": "Makkah Hotel to Madinah Hotel",
+                "available_cars": [
+                    {
+                        "car_name": "CAMRY",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 500,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "STARIA",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 700,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "GMC",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 1200,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "HIACE",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 800,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "name": "Madinah Hotel to Madinah Ziyarah",
+                "available_cars": [
+                    {
+                        "car_name": "CAMRY",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 250,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "STARIA",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 300,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "GMC",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 450,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "HIACE",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 400,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            },
+            {
+                "id": "5",
+                "name": "Makkah Hotel to Taif & Return",
+                "available_cars": [
+                    {
+                        "car_name": "CAMRY",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 500,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "STARIA",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 700,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "GMC",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 1200,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "HIACE",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 800,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            }
+        ],
+        "ar": [
+            { id: '0', name: "اختر الطريق", available_cars: [] },
+            {
+                "id": "1",
+                "name": "مطار جدة إلى فندق مكة",
+                "available_cars": [
+                    {
+                        "car_name": "كامري",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 300,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "ستاريا",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 350,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "جي إم سي",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 600,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "هاي إيس",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 450,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            },
+            {
+                "id": "2",
+                "name": "فندق مكة إلى زيارة مكة",
+                "available_cars": [
+                    {
+                        "car_name": "كامري",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 250,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "ستاريا",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 350,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "جي إم سي",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 500,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "هاي إيس",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 400,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            },
+            {
+                "id": "3",
+                "name": "فندق مكة إلى فندق المدينة",
+                "available_cars": [
+                    {
+                        "car_name": "كامري",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 500,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "ستاريا",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 700,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "جي إم سي",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 1200,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "هاي إيس",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 800,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            },
+            {
+                "id": "4",
+                "name": "فندق المدينة إلى زيارة المدينة",
+                "available_cars": [
+                    {
+                        "car_name": "كامري",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 250,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "ستاريا",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 300,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "جي إم سي",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 450,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "هاي إيس",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 400,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            },
+            {
+                "id": "5",
+                "name": "فندق مكة إلى الطائف والعودة",
+                "available_cars": [
+                    {
+                        "car_name": "كامري",
+                        "image_name": require('../../assets/photos/CAMRY.png'),
+                        "no_passegers": 4,
+                        "no_bags": 3,
+                        "price": 500,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "ستاريا",
+                        "image_name": require('../../assets/photos/STARIA.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 700,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "جي إم سي",
+                        "image_name": require('../../assets/photos/GMC.png'),
+                        "no_passegers": 7,
+                        "no_bags": 8,
+                        "price": 1200,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    },
+                    {
+                        "car_name": "هاي إيس",
+                        "image_name": require('../../assets/photos/HIACE.png'),
+                        "no_passegers": 12,
+                        "no_bags": 15,
+                        "price": 800,
+                        "currency_symbol": "SAR",
+                        "enabled": false
+                    }
+                ]
+            }
+        ]
+    }
 
     const handleRouteClick = (value) => {
-        if (value > 0)
-            navigation.navigate('Route', { value, route_data });
+        if (value > 0) navigation.navigate('Route', { value, route_data: routeData, language });
     };
 
     const handleWhatsapp = () => {
-        const phone_number = "923038722354"
+        const phone_number = "923038722354";
         const url = `whatsapp://send?phone=${phone_number}&text=${encodeURIComponent(`Hello,\nI'm looking for Taxi!`)}`;
 
         Linking.openURL(url)
             .then((supported) => {
-                // console.log(supported)
                 if (supported) {
                     return Linking.openURL(url);
                 } else {
@@ -230,17 +466,15 @@ const LandingPage = ({ navigation }) => {
             style={styles.bgImg}
             imageStyle={{ opacity: 0.1 }}
         >
-            {/* 2. some image vector */}
             <LottieView
                 source={require('../../assets/photos/car-animation.json')}
                 autoPlay
                 loop
                 style={styles.taxiVector} />
 
-            {/* 3. button for route */}
             <View style={styles.dropDownContainer}>
                 <Picker
-                    selectedValue={route_data[0].id}
+                    selectedValue={routeData.en[0].id}
                     style={{
                         backgroundColor: Colors.primary,
                         color: '#fff',
@@ -249,28 +483,20 @@ const LandingPage = ({ navigation }) => {
                     onValueChange={(itemValue) => handleRouteClick(itemValue)}
                     dropdownIconColor={'#fff'}
                 >
-                    {route_data.map(item => item.id >= 0 && <Picker.Item label={item.name} value={item.id} key={`item ${item.id}`} style={{ fontFamily: 'Outfit-Medium' }} />)}
+                    {routeData[language]?.map(item => (
+                        <Picker.Item
+                            label={item.name}
+                            value={item.id}
+                            key={`item ${item.id}`}
+                        />
+                    ))}
                 </Picker>
             </View>
-
-            {/* whatsapp icon */}
-            <TouchableOpacity style={styles.whatsapp_container} onPress={handleWhatsapp}>
-                <LottieView
-                    source={require('../../assets/photos/Whatsapp.json')}
-                    autoPlay
-                    loop
-                    style={styles.wa_icon} />
-            </TouchableOpacity>
         </ImageBackground>
-
     );
 };
 
 const styles = StyleSheet.create({
-    safeViewHolder: {
-        flex: 1,
-        backgroundColor: 'transparent'
-    },
     bgImg: {
         flex: 1,
         backgroundColor: '#fff'
@@ -287,19 +513,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center',
         borderRadius: 10,
         overflow: 'hidden',
-        backgroundColor: '#000'
-    },
-    whatsapp_container: {
-        position: 'absolute',
-        bottom: 20,
-        right: 10,
-        zIndex: 1,
-    },
-    wa_icon: {
-        height: 80,
-        width: 80,
-        borderRadius: 20,
-        alignSelf: 'center',
     },
 });
 

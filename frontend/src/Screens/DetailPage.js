@@ -1,6 +1,5 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-    SafeAreaView,
     View,
     Text,
     StyleSheet,
@@ -9,21 +8,41 @@ import {
     Dimensions,
     TouchableOpacity,
     Linking,
-    Alert
 } from 'react-native';
 import Colors from '../colors/Colors';
-import { Picker } from '@react-native-picker/picker';
-import CarSelector from '../Components/CarSelector';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import FonIcon from 'react-native-vector-icons/FontAwesome5';
-
-
 
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
 const DetailPage = ({ route }) => {
-    const { path_detail, selected_car } = route.params;
-    const splitted_path = path_detail.name.split(' to ');
+    const { path_detail, selected_car, language } = route.params;
+    let splitted_path;
+    if(language == 'en') 
+        splitted_path= path_detail.name.split(' to ');
+    else
+        splitted_path = path_detail.name.split(' إلى ');
+
+    const translations = {
+        en: {
+            carModel: "Car Model:",
+            passengersCapacity: "Passengers Capacity:",
+            luggageCapacity: "Luggage Capacity:",
+            pickUp: "Pick up:",
+            destination: "Destination:",
+            price: "Price:",
+            paymentNote: "Payment Cash After Ride",
+        },
+        ar: {
+            carModel: "نموذج السيارة",
+            passengersCapacity: "سعة الركاب",
+            luggageCapacity: "سعة الأمتعة",
+            pickUp: "استلام",
+            destination: "وجهة",
+            price: "السعر",
+            paymentNote: "الدفع نقدًا بعد الرحلة",
+        },
+    };
 
     const handleCall = () => {
         const number = "+923038722354"
@@ -70,27 +89,27 @@ const DetailPage = ({ route }) => {
                 <View style={styles.written_info_container}>
                     <View style={styles.break_line_main} />
 
-                    <View style={styles.route_container}>
+                    <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
                         <Icon name="directions-car" size={26} color="#414141" />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>Car Model:</Text>
+                            <Text style={styles.icon_label}>{translations[language].carModel}</Text>
                             <Text style={styles.icon_main}>{selected_car.car_name}</Text>
                         </View>
                     </View>
 
-                    <View style={{flexDirection:'row'}}>
-                    <View style={styles.route_container}>
+                    <View style={{flexDirection:'row', justifyContent: language == 'en' ? 'flex-start' : 'flex-end'}}>
+                    <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
                         <Icon name="person" size={26} color="#414141" />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>Passengers Capaciy:</Text>
+                            <Text style={styles.icon_label}>{translations[language].passengersCapacity}</Text>
                             <Text style={styles.icon_main}>{selected_car.no_passegers}</Text>
                         </View>
                     </View>
 
-                    <View style={styles.side_route_container}>
+                    <View style={language == 'en'? styles.side_route_container : styles.route_container_reverse}>
                         <Icon name="luggage" size={26} color="#414141" />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>Luggage Capacity:</Text>
+                            <Text style={styles.icon_label}>{translations[language].luggageCapacity}</Text>
                             <Text style={styles.icon_main}>{selected_car.no_bags}</Text>
                         </View>
                     </View>
@@ -98,29 +117,29 @@ const DetailPage = ({ route }) => {
 
                     <View style={styles.break_line} />
 
-                    <View style={styles.route_container}>
+                    <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
                         <Icon name="location-on" size={26} color="green" />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>Pick up:</Text>
+                            <Text style={styles.icon_label}>{translations[language].pickUp}</Text>
                             <Text style={styles.icon_main}>{splitted_path[0]}</Text>
                         </View>
                     </View>
-                    <View style={styles.route_container}>
+                    <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
                         <Icon name="location-on" size={26} color="red" />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>Destination:</Text>
+                            <Text style={styles.icon_label}>{translations[language].destination}</Text>
                             <Text style={styles.icon_main}>{splitted_path[1]}</Text>
                         </View>
                     </View>
 
                     <View style={styles.break_line} />
 
-                    <View style={styles.route_container}>
+                    <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
                         <Icon name="payments" size={26} color="green" />
                         <View style={styles.text_icon_container}>
-                            <Text style={styles.icon_label}>Price:</Text>
+                            <Text style={styles.icon_label}>{translations[language].price}</Text>
                             <Text style={styles.icon_main}>{selected_car.currency_symbol}{selected_car.price}</Text>
-                            <Text style={styles.icon_sub_main}>Payment Cash After Ride</Text>
+                            <Text style={styles.icon_sub_main}>{translations[language].paymentNote}</Text>
                         </View>
                     </View>
 
@@ -193,6 +212,14 @@ const styles = StyleSheet.create({
         marginTop: 2,
         marginBottom: 2,
     },
+    route_container_reverse: {
+        display: 'flex',
+        flexDirection: 'row-reverse',
+        alignItems: 'center',
+        marginTop: 2,
+        marginBottom: 2,
+        paddingRight: 20
+    },
     side_route_container: {
         display: 'flex',
         flexDirection: 'row',
@@ -207,8 +234,7 @@ const styles = StyleSheet.create({
         padding: 0,
         marginTop: 2,
         marginLeft:5,
-        textAlign: 'left',
-        color: '#151515'
+        color: Colors.darkTextColor
     },
     icon_main: {
         fontFamily: 'Outfit-Medium',
@@ -217,7 +243,7 @@ const styles = StyleSheet.create({
         marginTop: -4,
         marginLeft:5,
         textAlign: 'left',
-        color: '#151515'
+        color: Colors.darkTextColor
     },
     icon_sub_main: {
         fontFamily: 'Outfit-Medium',
@@ -226,7 +252,7 @@ const styles = StyleSheet.create({
         marginTop: -4,
         marginLeft:5,
         textAlign: 'left',
-        color: '#151515'
+        color: Colors.darkTextColor
     },
     contact_container:{
         flexDirection:'row',

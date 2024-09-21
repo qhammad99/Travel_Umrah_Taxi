@@ -11,7 +11,10 @@ export default{
     noBackground: '#00000000', //transparent
     darkColor: '#262D37',  //25 dark for text
     lightDark: '#7A7A7A', //5 for placholders and separators bar.
-    primary: '#7A82FE',
+    primary: '#006EDB',
     selectedColor: '#0ACF83', //5 brownish color for selected items
     minorColor: '#2196F3', //5 bluis for minor items
+    lightTextColor: '#fff',
+    dimTextColor: '#efefef',
+    darkTextColor: '#151515'
 };

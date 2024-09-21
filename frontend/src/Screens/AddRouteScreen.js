@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator } from 'react-native';
 import API from '../api';
+import Colors from '../colors/Colors';
 
 const AddRouteScreen = ({ navigation }) => {
   const [pickup, setPickup] = useState('');
@@ -97,13 +98,13 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#ddd',
-    color: '#151515'
+    color: Colors.darkTextColor
   },
   button: {
     width: '100%',
     padding: 15,
     borderRadius: 5,
-    backgroundColor: '#7A82FE',
+    backgroundColor: Colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
   },

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Alert, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import API from '../api'
+import Colors from '../colors/Colors';
 
 const LoginScreen = ({ navigation }) => {
   const [username, setUsername] = useState('');
@@ -107,7 +108,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     marginBottom: 15,
-    color: '#151515'
+    color: Colors.darkTextColor
   },
   passwordContainer: {
     width: '80%',
@@ -120,7 +121,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     borderWidth: 1,
     borderColor: '#ddd',
-    color: '#151515'
+    color: Colors.darkTextColor
   },
   eyeIcon: {
     position: 'absolute',
@@ -133,7 +134,7 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 5,
     marginTop: 20,
-    backgroundColor: '#7A82FE',
+    backgroundColor: Colors.primary,
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row', // Align spinner and text horizontally

@@ -206,7 +206,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     marginBottom: 15,
-    color: '#151515'
+    color: Colors.darkTextColor
   },
   input_price: {
     width: '100%',
@@ -215,7 +215,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     paddingVertical: -10,
-    color: '#151515'
+    color: Colors.darkTextColor
   },
   button: {
     alignSelf:'center',

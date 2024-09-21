@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, FlatList, TouchableOpacity, StyleSheet, Button, Alert, ActivityIndicator } from 'react-native';
 import API from '../api';
+import Colors from '../colors/Colors';
 
 const AdminRoutesListScreen = ({ navigation }) => {
   const [routes, setRoutes] = useState([]);
@@ -125,7 +126,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: 'bold',
     marginBottom: 8,
-    color: '#151515',
+    color: Colors.darkTextColor,
     fontFamily: 'Outfit-Medium'
   },
   buttonContainer: {

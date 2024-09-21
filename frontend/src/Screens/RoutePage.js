@@ -1,55 +1,66 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
-    SafeAreaView,
     View,
-    Text,
     StyleSheet,
     ImageBackground
 } from 'react-native';
-import Colors from '../colors/Colors';
 import { Picker } from '@react-native-picker/picker';
 import CarSelector from '../Components/CarSelector';
 
-const RoutePage = ({route, navigation}) => {
-    const { value, route_data } = route.params;
+const RoutePage = ({ route, navigation }) => {
+    const { value, route_data, language } = route.params; 
     const [selectedRoute, setSelectedRoute] = useState(value);
+
+    useEffect(() => {
+        setSelectedRoute(value);
+    }, [value]);
 
     const handleRouteClick = (value) => {
         setSelectedRoute(value);
     };
 
     const handleDetailClick = (selected_car) => {
-        navigation.navigate('CarDetail', { path_detail: route_data[value], selected_car });
+        navigation.navigate('CarDetail', { path_detail: route_data[language][selectedRoute], selected_car, language });
     };
 
     return (
         <ImageBackground
-        source={require('../../assets/photos/Group5.png')}
-        style={styles.bgImg}
-        imageStyle={{ opacity: 0.1 }}
-      >
-            {/* 2. button for route */}
+            source={require('../../assets/photos/Group5.png')}
+            style={styles.bgImg}
+            imageStyle={{ opacity: 0.1 }}
+        >
+            {/* Dropdown for routes */}
             <View style={styles.dropDownContainer}>
                 <Picker
                     selectedValue={selectedRoute}
                     style={{
                         backgroundColor: '#d3d3d3',
-                        color: '#636363',
+                        color: '#151515',
                         fontSize: 18
                     }}
                     onValueChange={(itemValue) => handleRouteClick(itemValue)}
-                    dropdownIconColor="#636363"
+                    dropdownIconColor="#151515"
                 >
-                    {route_data.map(item => item.id >= 0 && <Picker.Item label={item.name} value={item.id} key={`item ${item.id}`} style={{fontFamily:'Outfit-Medium'}}/>)}
+                    {route_data[language].map(item => (
+                        item.id >= 0 && (
+                            <Picker.Item
+                                label={item.name} // Use name directly from route data
+                                value={item.id}
+                                key={`item ${item.id}`}
+                                style={{ fontFamily: 'Outfit-Medium' }}
+                            />
+                        )
+                    ))}
                 </Picker>
             </View>
 
-            {/* 3. show available cars */}
-            { 
-              (route_data[selectedRoute].available_cars.length > 0) &&
-              route_data[selectedRoute].available_cars.map((car_index, index)=><CarSelector car_detail={car_index} key={index} clickHandle={handleDetailClick}/> )
+            {/* Show available cars */}
+            {
+                (route_data[language][selectedRoute].available_cars.length > 0) &&
+                route_data[language][selectedRoute].available_cars.map((car_detail, index) => (
+                    <CarSelector car_detail={car_detail} key={index} clickHandle={handleDetailClick}  language={language}/>
+                ))
             }
-
         </ImageBackground>
     );
 };
@@ -60,8 +71,8 @@ const styles = StyleSheet.create({
     },
     bgImg: {
         flex: 1,
-        backgroundColor:'#fff'
-      },
+        backgroundColor: '#fff'
+    },
     dropDownContainer: {
         width: '90%',
         alignSelf: 'center',
