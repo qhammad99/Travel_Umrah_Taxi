@@ -114,10 +114,10 @@ const App = () => {
             <Tab.Screen name="Settings" options={{tabBarLabel: texts[language].settings}}>
               {(props) => <SettingsScreen {...props} updateLanguage={updateLanguage} updateTheme={updateTheme} language={language} theme={theme}/>}
             </Tab.Screen>
-            <Tab.Screen name="Login" component={LoginScreen} options={{tabBarLabel: texts[language].login}}/>
-            <Tab.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} />
-            <Tab.Screen name="AddRoute" component={AddRouteScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} />
-            <Tab.Screen name="EditRoute" component={EditRouteScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} />
+            {/* <Tab.Screen name="Login" component={LoginScreen} options={{tabBarLabel: texts[language].login}}/> */}
+            {/* <Tab.Screen name="AdminRoutesList" component={AdminRoutesListScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} /> */}
+            {/* <Tab.Screen name="AddRoute" component={AddRouteScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} /> */}
+            {/* <Tab.Screen name="EditRoute" component={EditRouteScreen} options={{ tabBarButton: () => null, tabBarVisible: false }} /> */}
           </Tab.Navigator>
         </NavigationContainer>
       </SafeAreaView>

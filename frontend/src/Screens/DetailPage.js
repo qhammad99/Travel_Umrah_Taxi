@@ -36,6 +36,7 @@ const DetailPage = ({ route }) => {
             destination: "Destination:",
             price: "Price:",
             paymentNote: "Payment Cash After Ride",
+            rulesNote: "Location & Rates will be fix by mutual conversation"
         },
         ar: {
             carModel: "نموذج السيارة",
@@ -45,6 +46,7 @@ const DetailPage = ({ route }) => {
             destination: "وجهة",
             price: "السعر",
             paymentNote: "الدفع نقدًا بعد الرحلة",
+            rulesNote: "الموقع والأسعار ستحدد بالتفاهم المتبادل"
         },
     };
 
@@ -156,6 +158,9 @@ const DetailPage = ({ route }) => {
                             <FonIcon name="whatsapp" size={40} color="green" />
                         </TouchableOpacity>
                     </View>
+
+                    <Text style={[styles.icon_sub_main, {fontSize: 13}, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].rulesNote}</Text>
+
 
                 </View>
 
