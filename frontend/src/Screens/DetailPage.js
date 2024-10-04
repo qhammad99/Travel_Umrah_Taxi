@@ -12,6 +12,8 @@ import {
 import Colors from '../colors/Colors';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import FonIcon from 'react-native-vector-icons/FontAwesome5';
+import IoIcon from 'react-native-vector-icons/Ionicons';
+
 
 const { width: viewportWidth, height: viewportHeight } = Dimensions.get('window');
 
@@ -51,7 +53,7 @@ const DetailPage = ({ route }) => {
     };
 
     const handleCall = () => {
-        const number = "+923038722354"
+        const number = "+966563032090"
         let phoneNumber = '';
         if (Platform.OS === 'android') { phoneNumber = `tel:${number}`; }
         else {phoneNumber = `telprompt:${number}`; }
@@ -59,7 +61,7 @@ const DetailPage = ({ route }) => {
     };
 
     const handleWhatsapp = () => {
-        const phone_number = "923038722354"
+        const phone_number = "966563032090"
         const url = `whatsapp://send?phone=${phone_number}&text=${encodeURIComponent(`
             Car Model: ${selected_car.car_name},\n
             Route: ${path_detail.name}, '\n
@@ -152,15 +154,17 @@ const DetailPage = ({ route }) => {
                     <View style={styles.break_line} />
                     <View style={styles.contact_container}>
                         <TouchableOpacity style={styles.footer_icon_holder} onPress={handleCall}>
-                                <Icon name="call" size={40} color="#154c79" />
+                        <IoIcon name="call" size={20} color={Colors.lightTextColor} />
+                            <Text style={[styles.button_label, styles.light_font]}> Call Now</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.footer_icon_holder_2} onPress={handleWhatsapp}>
-                            <FonIcon name="whatsapp" size={40} color="green" />
+                        <FonIcon name="whatsapp" size={22} color={Colors.lightTextColor} />
+                            <Text style={[styles.button_label, styles.light_font]}> Whatsapp Now</Text>
                         </TouchableOpacity>
                     </View>
-
-                    <Text style={[styles.icon_sub_main, {fontSize: 13}, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].rulesNote}</Text>
-
+                    <View style={language == 'en'? styles.route_container : styles.route_container_reverse}>
+                        <Text style={[styles.icon_sub_main, {fontSize: 13}, theme=='light'?styles.dark_font:styles.light_font]}>{translations[language].rulesNote}</Text>
+                    </View>
 
                 </View>
 
@@ -296,31 +300,20 @@ bgImgDark: {
         marginLeft:5,
         textAlign: 'left',
     },
+    button_label: {
+        fontFamily: 'Outfit-Medium',
+        fontSize: 12,
+        width: '80%',
+        textAlign: 'center'
+    },
     contact_container:{
         flexDirection:'row',
         justifyContent:'center'
     },
     footer_icon_holder:{
-        width: viewportWidth * 0.2,
-        justifyContent:'center',
-        alignItems:'center',
-        margin:10,
-        // borderTopStartRadius: 30,
-        // borderBottomEndRadius: 30,
-        borderRadius: 20,
-        paddingVertical: 5,
-        paddingHorizontal: 8,
-        backgroundColor: '#eee',
-        elevation: 5,
-        borderWidth: 0,
-        borderTopColor: 'green',
-        borderLeftColor: 'blue',
-        borderBottomColor:'indigo',
-        borderRightColor: 'violet'
-    },
-    footer_icon_holder_2:{
-        width: viewportWidth * 0.2,
-        justifyContent:'center',
+        width: viewportWidth * 0.35,
+        flexDirection: 'row',
+        // justifyContent:'space-evenly',
         alignItems:'center',
         marginVertical:10,
         marginHorizontal: 5,
@@ -329,13 +322,38 @@ bgImgDark: {
         borderRadius: 20,
         paddingVertical: 5,
         paddingHorizontal: 8,
+        paddingLeft: 10,
+        backgroundColor: '#eee',
+        elevation: 5,
+        backgroundColor: '#154c79'
+        // borderWidth: 0,
+        // borderTopColor: 'green',
+        // borderLeftColor: 'blue',
+        // borderBottomColor:'indigo',
+        // borderRightColor: 'violet'
+    },
+    footer_icon_holder_2:{
+        width: viewportWidth * 0.35,
+        flexDirection: 'row',
+        // justifyContent:'space-evenly',
+
+        alignItems:'center',
+        marginVertical:10,
+        marginHorizontal: 5,
+        // borderTopStartRadius: 30,
+        // borderBottomEndRadius: 30,
+        borderRadius: 20,
+        paddingVertical: 5,
+        paddingHorizontal: 8,
+        paddingLeft: 10,
         backgroundColor: '#eee',
         elevation: 5,
         borderWidth: 0,
-        borderTopColor: 'green',
-        borderLeftColor: 'blue',
-        borderBottomColor:'indigo',
-        borderRightColor: 'violet'
+        backgroundColor: 'green'
+        // borderTopColor: 'green',
+        // borderLeftColor: 'blue',
+        // borderBottomColor:'indigo',
+        // borderRightColor: 'violet'
     },
     footer_icon_sub_holder:{
         

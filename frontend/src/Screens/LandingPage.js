@@ -56,8 +56,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 700,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -107,8 +107,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 700,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -158,8 +158,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 500,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -209,8 +209,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1000,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -260,8 +260,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 400,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -311,8 +311,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 800,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -362,8 +362,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 650,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -413,8 +413,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1000,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -464,8 +464,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 400,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -515,8 +515,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1000,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -566,8 +566,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1000,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -617,8 +617,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 400,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -668,8 +668,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 350,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -719,8 +719,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 350,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -770,8 +770,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 350,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -821,8 +821,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 350,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -872,8 +872,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1200,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -923,8 +923,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "COASTER",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1200,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -977,8 +977,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 700,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1028,8 +1028,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 700,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1079,8 +1079,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 500,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1130,8 +1130,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1000,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1181,8 +1181,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 400,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1232,8 +1232,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 800,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1283,8 +1283,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 650,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1334,8 +1334,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1000,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1385,8 +1385,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 400,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1436,8 +1436,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1000,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1487,8 +1487,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1000,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1538,8 +1538,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 400,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1589,8 +1589,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 350,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1640,8 +1640,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 350,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1691,8 +1691,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 350,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1742,8 +1742,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 350,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1793,8 +1793,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1200,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1844,8 +1844,8 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "كوستر",
                         "image_name": require('../../assets/photos/COASTER.png'),
-                        "no_passegers": 23,
-                        "no_bags": 23,
+                        "no_passegers": 20,
+                        "no_bags": 20,
                         "price": 1200,
                         "currency_symbol": "SAR",
                         "enabled": false
@@ -1923,7 +1923,7 @@ const styles = StyleSheet.create({
     },
     taxiVector: {
         marginTop: 20,
-        height: 400,
+        height: 250,
         width: '90%',
         borderRadius: 20,
         alignSelf: 'center',

@@ -54,11 +54,11 @@ const SettingsScreen = ({ navigation, updateLanguage, updateTheme }) => {
   const lang = translations[language] || translations.en; // Fallback to English
 
   const settingsOptions = [
-    {
-      title: lang.terms,
-      onPress: () => navigation.navigate('Terms'),
-      icon: 'document-text',
-    },
+    // {
+    //   title: lang.terms,
+    //   onPress: () => navigation.navigate('Terms'),
+    //   icon: 'document-text',
+    // },
     {
       title: lang.chooseLanguage,
       component: (

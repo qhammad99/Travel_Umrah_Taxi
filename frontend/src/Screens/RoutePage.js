@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import {
     View,
     StyleSheet,
+    ScrollView,
     ImageBackground
 } from 'react-native';
 import { Picker } from '@react-native-picker/picker';
 import CarSelector from '../Components/CarSelector';
 
 const RoutePage = ({ route, navigation }) => {
-    const { value, route_data, language, theme } = route.params; 
+    const { value, route_data, language, theme } = route.params;
     const [selectedRoute, setSelectedRoute] = useState(value);
 
     useEffect(() => {
@@ -54,13 +55,15 @@ const RoutePage = ({ route, navigation }) => {
                 </Picker>
             </View>
 
-            {/* Show available cars */}
-            {
-                (route_data[language][selectedRoute].available_cars.length > 0) &&
-                route_data[language][selectedRoute].available_cars.map((car_detail, index) => (
-                    <CarSelector car_detail={car_detail} key={index} clickHandle={handleDetailClick}  language={language}/>
-                ))
-            }
+            <ScrollView>
+                {/* Show available cars */}
+                {
+                    (route_data[language][selectedRoute].available_cars.length > 0) &&
+                    route_data[language][selectedRoute].available_cars.map((car_detail, index) => (
+                        <CarSelector car_detail={car_detail} key={index} clickHandle={handleDetailClick} language={language} />
+                    ))
+                }
+            </ScrollView>
         </ImageBackground>
     );
 };
