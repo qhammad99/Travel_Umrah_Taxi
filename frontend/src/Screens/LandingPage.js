@@ -20,7 +20,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -29,7 +29,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -71,7 +71,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -80,7 +80,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -122,7 +122,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -131,9 +131,9 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 270,
+                        "price": 300,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
@@ -173,7 +173,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -182,7 +182,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -224,7 +224,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 250,
                         "currency_symbol": "SAR",
@@ -233,7 +233,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 250,
                         "currency_symbol": "SAR",
@@ -275,7 +275,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -284,9 +284,9 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 370,
+                        "price": 400,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
@@ -326,7 +326,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 450,
                         "currency_symbol": "SAR",
@@ -335,7 +335,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 450,
                         "currency_symbol": "SAR",
@@ -377,7 +377,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -386,7 +386,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -428,7 +428,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 280,
                         "currency_symbol": "SAR",
@@ -437,7 +437,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 250,
                         "currency_symbol": "SAR",
@@ -479,7 +479,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -488,7 +488,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -530,7 +530,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -539,7 +539,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -581,7 +581,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 250,
                         "currency_symbol": "SAR",
@@ -590,7 +590,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 240,
                         "currency_symbol": "SAR",
@@ -632,16 +632,16 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 230,
+                        "price": 200,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 200,
                         "currency_symbol": "SAR",
@@ -683,16 +683,16 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 230,
+                        "price": 200,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 200,
                         "currency_symbol": "SAR",
@@ -734,7 +734,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 200,
                         "currency_symbol": "SAR",
@@ -743,9 +743,9 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 180,
+                        "price": 200,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
@@ -785,7 +785,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 200,
                         "currency_symbol": "SAR",
@@ -794,9 +794,9 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 180,
+                        "price": 200,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
@@ -836,7 +836,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 900,
                         "currency_symbol": "SAR",
@@ -845,7 +845,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 900,
                         "currency_symbol": "SAR",
@@ -887,7 +887,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STAR X",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 900,
                         "currency_symbol": "SAR",
@@ -896,7 +896,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "STARIA",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 900,
                         "currency_symbol": "SAR",
@@ -941,7 +941,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -950,7 +950,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -992,7 +992,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -1001,7 +1001,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -1043,7 +1043,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 300,
                         "currency_symbol": "SAR",
@@ -1052,9 +1052,9 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 270,
+                        "price": 300,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
@@ -1094,7 +1094,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -1103,7 +1103,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -1145,7 +1145,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 250,
                         "currency_symbol": "SAR",
@@ -1154,7 +1154,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 250,
                         "currency_symbol": "SAR",
@@ -1196,7 +1196,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -1205,9 +1205,9 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 370,
+                        "price": 400,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
@@ -1247,7 +1247,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 450,
                         "currency_symbol": "SAR",
@@ -1256,7 +1256,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 450,
                         "currency_symbol": "SAR",
@@ -1298,7 +1298,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -1307,7 +1307,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -1349,7 +1349,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 280,
                         "currency_symbol": "SAR",
@@ -1358,7 +1358,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 250,
                         "currency_symbol": "SAR",
@@ -1400,7 +1400,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -1409,7 +1409,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -1451,7 +1451,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -1460,7 +1460,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 400,
                         "currency_symbol": "SAR",
@@ -1502,7 +1502,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 250,
                         "currency_symbol": "SAR",
@@ -1511,7 +1511,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 240,
                         "currency_symbol": "SAR",
@@ -1553,16 +1553,16 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 230,
+                        "price": 200,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 200,
                         "currency_symbol": "SAR",
@@ -1604,16 +1604,16 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 230,
+                        "price": 200,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 200,
                         "currency_symbol": "SAR",
@@ -1655,7 +1655,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 200,
                         "currency_symbol": "SAR",
@@ -1664,9 +1664,9 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 180,
+                        "price": 200,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
@@ -1706,7 +1706,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 200,
                         "currency_symbol": "SAR",
@@ -1715,9 +1715,9 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
-                        "price": 180,
+                        "price": 200,
                         "currency_symbol": "SAR",
                         "enabled": false
                     },
@@ -1757,7 +1757,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 900,
                         "currency_symbol": "SAR",
@@ -1766,7 +1766,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 900,
                         "currency_symbol": "SAR",
@@ -1808,7 +1808,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستار إكس",
                         "image_name": require('../../assets/photos/STAR_X.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 900,
                         "currency_symbol": "SAR",
@@ -1817,7 +1817,7 @@ const LandingPage = ({ navigation, language, theme }) => {
                     {
                         "car_name": "ستاريا",
                         "image_name": require('../../assets/photos/STARIA.png'),
-                        "no_passegers": 7,
+                        "no_passegers": 10,
                         "no_bags": 8,
                         "price": 900,
                         "currency_symbol": "SAR",

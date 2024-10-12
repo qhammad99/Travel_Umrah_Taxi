@@ -15,10 +15,10 @@ import SettingsScreen from './src/Screens/SettingsScreen';
 import RoutePage from './src/Screens/RoutePage';
 import DetailPage from './src/Screens/DetailPage';
 import TermsAndConditions from './src/Screens/TermsAndConditions';
-import LoginScreen from './src/Screens/LoginScreen';
-import AdminRoutesListScreen from './src/Screens/AdminRoutesListScreen';
-import AddRouteScreen from './src/Screens/AddRouteScreen';
-import EditRouteScreen from './src/Screens/EditRouteScreen';
+// import LoginScreen from './src/Screens/LoginScreen';
+// import AdminRoutesListScreen from './src/Screens/AdminRoutesListScreen';
+// import AddRouteScreen from './src/Screens/AddRouteScreen';
+// import EditRouteScreen from './src/Screens/EditRouteScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
